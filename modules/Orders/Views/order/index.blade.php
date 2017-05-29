@@ -59,7 +59,7 @@
                             <div class="col-md-4">
                                 <a href="{{ url('/dashboard/orders/add') }}" class="btn btn-primary btn-sm">Add New Order</a>
 
-                                <button class="btn btn-sm btn-danger" id="delete_check">Delete</button>
+                                <button class="btn btn-sm btn-danger" id="delete_check" data-loading-text="Loading...">Delete</button>
                             </div>
 
                             
@@ -271,6 +271,8 @@
 
             if (id!="") {
 
+                $(this).button('loading');
+
                 $.each(id, function(i, v){
                     arrayId.push(v.value);
                 });
@@ -286,6 +288,7 @@
                     url:url,
                     data:{idOrder : arrayId},
                     success:function(data){
+                        $(this).button('reset');
                         window.location = orders;
                     }
                 });

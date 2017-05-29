@@ -67,7 +67,7 @@
 
                         <div class="pull-right">
                             <button class="btn btn-info btn-sm btn-info" data-toggle="modal" data-target="#modalAddCategory">Add New Category</button>
-                            <button class="btn btn-sm btn-danger" id="delete_check">Delete</button>
+                            <button class="btn btn-sm btn-danger" id="delete_check" data-loading-text="Loading...">Delete</button>
                         </div>
 
                         <br /><br />
@@ -122,7 +122,7 @@
                                         <tr>
                                             <td>
                                                 <form id="action">
-                                                <input type="checkbox" name="check_action" value="{{ $catChild->id }}" class="check">
+                                                    <input type="checkbox" name="check_action" value="{{ $catChild->id }}" class="check">
                                                 </form>
                                             </td>
                                             <td>__ {{ $catChild->name }}</td>
@@ -170,7 +170,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Icon" class="control-label">Icon</label>
-                                <input type="text" class="form-control" id="icon" name="icon">
+                                <input type="text" class="form-control" id="icon" name="icon" value="{{ $catChild->icon }}">
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -218,7 +218,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Icon" class="control-label">Icon</label>
-                                <input type="text" class="form-control" id="icon" name="icon">
+                                <input type="text" class="form-control" id="icon" name="icon" value="{{ $category->icon }}">
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -425,6 +425,8 @@
 
             if (id!="") { 
 
+                $(this).button('loading');
+                
                 $.each(id, function(i, v){
                     arrayId.push(v.value);
                 });
@@ -440,6 +442,7 @@
                     url:url,
                     data:{idcategory : arrayId},
                     success:function(data){
+                        $(this).button('reset');
                         window.location = categories;
                     }
                 });

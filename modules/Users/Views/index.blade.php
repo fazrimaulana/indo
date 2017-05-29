@@ -65,7 +65,7 @@
 
                         <div class="pull-right">
                             <a href="{{ url('/dashboard/users/add') }}" id="new-user" class="btn btn-info btn-sm"></i> Add New User</a>
-                            <button class="btn btn-sm btn-danger" id="delete_checked">Delete</button>
+                            <button class="btn btn-sm btn-danger" id="delete_checked" data-loading-text="Loading...">Delete</button>
                         </div>
 
                         <br /><br />
@@ -232,6 +232,8 @@
 
             if(id!=""){
 
+                $(this).button('loading');
+
                 $.each(id, function(i, v){
                     arrayId.push(v.value);
                 });
@@ -247,6 +249,9 @@
                     url:url,
                     data:{iduser : arrayId},
                     success:function(data){
+
+                        $(this).button('reset');
+
                         window.location = users;
                     }
                 });

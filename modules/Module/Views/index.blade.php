@@ -43,8 +43,8 @@
 					</div>
 					<div class="portlet-body">
                         <div class="pull-right">
-                            <a href="javascript:;" class="btn btn-sm btn-info" id="activedModule">Active</a>
-                            <a href="javascript:;" class="btn btn-danger btn-sm" id="inactivedModule">Inactive</a>
+                            <button type="button" class="btn btn-sm btn-info" id="activedModule" data-loading-text="Loading...">Active</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="inactivedModule" data-loading-text="Loading...">Inactive</button>
                         </div>
 
                         <br /><br />
@@ -169,24 +169,30 @@
             var urlModule = "{{ url('/dashboard/modules') }}";
             var arrayId = [];
 
-            $.each(id, function(i, v){
-                arrayId.push(v.value);
-            });
+            if(id!=""){
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+                $(this).button('loading');
 
-            $.ajax({
-                type:'POST',
-                url:url,
-                data:{idModules : arrayId},
-                success:function(data){
-                    window.location = urlModule;
-                }
-            });
+                $.each(id, function(i, v){
+                    arrayId.push(v.value);
+                });
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type:'POST',
+                    url:url,
+                    data:{idModules : arrayId},
+                    success:function(data){
+                        $(this).button('reset');
+                        window.location = urlModule;
+                    }
+                });
+            }
 
         });
 
@@ -198,24 +204,30 @@
             var urlModule = "{{ url('/dashboard/modules') }}";
             var arrayId = [];
 
-            $.each(id, function(i, v){
-                arrayId.push(v.value);
-            });
+            if(id!=""){
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+                $(this).button('loading');
 
-            $.ajax({
-                type:'POST',
-                url:url,
-                data:{idModules : arrayId},
-                success:function(data){
-                    window.location = urlModule;
-                }
-            });
+                $.each(id, function(i, v){
+                    arrayId.push(v.value);
+                });
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type:'POST',
+                    url:url,
+                    data:{idModules : arrayId},
+                    success:function(data){
+                        $(this).button('reset');
+                        window.location = urlModule;
+                    }
+                });
+            }
 
         });
 
