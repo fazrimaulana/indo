@@ -1,0 +1,57 @@
+{
+    "name": "Products",
+    "description": "Products",
+    "keyword": ["Products"],
+    "version": "0.0.1",
+    "author": "Fazri Maulana",
+    "category": ["Products"],
+    "web": "facebook.com/fazri.maulana1",
+    "repository": "github.com",
+    "sequence": "1",
+    "license": "MIT",
+    "permission":[
+        "can_see_products",
+        "can_add_products",
+        "can_edit_products",
+        "can_delete_products",
+        "can_see_products_index",
+        "can_see_products_menu",
+        "can_add_products_gallery",
+        "can_delete_product_gallery"
+    ],
+    "menu": {
+        "Products_parent": {
+            "menu_id":"dashboard.products",
+            "parent_id":"",
+            "name":"Products",
+            "href":"#",
+            "target":"",
+            "title":"Products Management",
+            "icon":"fa fa-folder",
+            "permission":"can_see_products_menu",
+            "sequence":"93"
+        },
+        "products_index": {
+            "menu_id":"dashboard.products.index",
+            "parent_id":"dashboard.products",
+            "name":"All Products",
+            "href":"dashboard/products",
+            "target":"#",
+            "title":"Products Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_see_products_index",
+            "sequence":"1"
+        },
+        "products_add": {
+            "menu_id":"dashboard.products.add",
+            "parent_id":"dashboard.products",
+            "name":"Add Products",
+            "href":"dashboard/products/add",
+            "target":"#",
+            "title":"Products Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_add_products",
+            "sequence":"1"
+        }
+    }
+}

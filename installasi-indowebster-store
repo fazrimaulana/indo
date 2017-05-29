@@ -1,0 +1,30 @@
+1. git clone git@devgit.mcs.co.id:Fazri/indowebster-store.git
+
+2. jadikan comment Modules\ModuleServiceProvider::class di folder config/app.php bagian provider
+
+3. buat database dengan nama indowebster
+
+4. setting file .env :
+	
+	44.1 DB_DATABASE=indowebster
+		DB_USERNAME=root
+		DB_PASSWORD=
+
+	4.2 CACHE_DRIVER=array
+
+5. composer update
+
+6. migrate database : php artisan migrate
+
+7. seed database : php artisan db:seed
+
+8. aktifkan kembali Modules\ModuleServiceProvider::class di folder config/app.php bagian provider
+
+9. setting relationship pada folder vendor\zizaco\entrust\src\Entrust\Traits\EntrustRoleTrait.php pada 
+   method users menjadi :
+
+	return $this->belongsToMany(Config::get('auth.providers.users.model'), Config::get('entrust.role_user_table'),Config::get('entrust.role_foreign_key'),Config::get('entrust.user_foreign_key'));
+
+10. php artisan key:generate 
+
+11. buka aplikasi di web browser

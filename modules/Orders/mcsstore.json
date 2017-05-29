@@ -1,0 +1,59 @@
+{
+    "name": "Orders",
+    "description": "Orders",
+    "keyword": ["Orders"],
+    "version": "0.0.1",
+    "author": "Fazri Maulana",
+    "category": ["Orders"],
+    "web": "facebook.com/fazri.maulana1",
+    "repository": "github.com",
+    "sequence": "1",
+    "license": "MIT",
+    "permission":[
+        "can_see_orders_menu",
+        "can_see_orders_index",
+        "can_see_transaction_methods_index",
+        "can_see_orders",
+        "can_add_orders",
+        "can_edit_orders",
+        "can_delete_orders",
+        "can_see_transaction_method",
+        "can_edit_transaction_method",
+        "can_add_transaction_method"
+    ],
+    "menu": {
+        "orders_parent": {
+            "menu_id":"dashboard.orders",
+            "parent_id":"",
+            "name":"Orders",
+            "href":"#",
+            "target":"",
+            "title":"Orders Management",
+            "icon":"fa fa-shopping-cart",
+            "permission":"can_see_orders_menu",
+            "sequence":"95"
+        },
+        "orders_index": {
+            "menu_id":"dashboard.orders.index",
+            "parent_id":"dashboard.orders",
+            "name":"All Orders",
+            "href":"dashboard/orders",
+            "target":"#",
+            "title":"Orders Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_see_orders_index",
+            "sequence":"1"
+        },
+        "transaction_method_index": {
+            "menu_id":"dashboard.orders.transaction_methods.index",
+            "parent_id":"dashboard.orders",
+            "name":"Transaction Methods",
+            "href":"dashboard/transaction-methods",
+            "target":"#",
+            "title":"Orders Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_see_transaction_methods_index",
+            "sequence":"1"
+        }
+    }
+}

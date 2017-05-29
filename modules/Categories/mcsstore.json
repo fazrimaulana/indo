@@ -1,0 +1,43 @@
+{
+    "name": "Categories",
+    "description": "Categories",
+    "keyword": ["Categories"],
+    "version": "0.0.1",
+    "author": "Fazri Maulana",
+    "category": ["Categories"],
+    "web": "facebook.com/fazri.maulana1",
+    "repository": "github.com",
+    "sequence": "1",
+    "license": "MIT",
+    "permission":[
+        "can_see_categories",
+        "can_add_categories",
+        "can_edit_categories",
+        "can_delete_categories",
+        "can_see_categories_index"
+    ],
+    "menu": {
+        "categories_parent": {
+            "menu_id":"dashboard.categories",
+            "parent_id":"",
+            "name":"Categories",
+            "href":"#",
+            "target":"",
+            "title":"Categories Management",
+            "icon":"fa fa-thumb-tack",
+            "permission":"can_see_categories_menu",
+            "sequence":"94"
+        },
+        "categories_index": {
+            "menu_id":"dashboard.categories.index",
+            "parent_id":"dashboard.categories",
+            "name":"All Categories",
+            "href":"dashboard/categories",
+            "target":"#",
+            "title":"Categories Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_see_categories_index",
+            "sequence":"1"
+        }
+    }
+}
