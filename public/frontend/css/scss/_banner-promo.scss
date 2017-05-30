@@ -1,0 +1,244 @@
+//----------BANNER-PROMO----------//
+.banner-promo {
+    .wr-banner {
+        .text-banner {
+            .text-animation {
+                h4 {
+                    position: relative;
+                    letter-spacing: 3px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 600;
+                    margin: 0px;
+                    left: 450px;
+                }
+                h1 {
+                    position: relative;
+                    font-size: 70px;
+                    letter-spacing: 2px;
+                    margin: 15px 0px;
+                    left: -100px;
+                }
+                p {
+                    position: relative;
+                    letter-spacing: 3px;
+                    font-family: 'Open Sans', sans-serif;
+                    margin-bottom: 15px;
+                    left: 450px;
+                }
+                a {
+                    position: relative;
+                    color: $putih;
+                    background-color: $biru-muda;
+                    letter-spacing: 3px;
+                    font-family: 'PT Serif', serif;
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding: 15px 20px;
+                    left: -100px;
+                }
+                a:hover {
+                    background-color: $hitam;
+                }
+                position: absolute;
+                opacity: 0;
+                margin-top: 100px;
+            }
+        }
+        padding: 0px;
+    }
+    background: linear-gradient($gradien-grey); /* Standard syntax */
+	background: -webkit-linear-gradient($gradien-grey); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($gradien-grey); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($gradien-grey); /* For Firefox 3.6 to 15 */
+}
+.banner-promo:hover {
+    .wr-banner {
+        .text-banner {
+            .text-animation {
+                h4 {
+                    position: relative;
+                    left: 0px;
+                    transition: 0.8s;
+                    -webkit-transition: 0.8s ease-in;
+                    -moz-transition: 0.8s ease-in;
+                    -ms-transition: 0.8s ease-in;
+                    -o-transition: 0.8s ease-in;
+                    
+                }
+                h1 {
+                    position: relative;
+                    left: 100px;
+                    transition: 0.8s;
+                    -webkit-transition: 0.8s ease-in;
+                    -moz-transition: 0.8s ease-in;
+                    -ms-transition: 0.8s ease-in;
+                    -o-transition: 0.8s ease-in;
+                }
+                p {
+                    position: relative;
+                    left: 200px;
+                    transition: 0.8s;
+                    -webkit-transition: 0.8s ease-in;
+                    -moz-transition: 0.8s ease-in;
+                    -ms-transition: 0.8s ease-in;
+                    -o-transition: 0.8s ease-in;
+                }
+                a {
+                    position: relative;
+                    left: 300px;
+                    transition: 0.8s;
+                    -webkit-transition: 0.8s ease-in;
+                    -moz-transition: 0.8s ease-in;
+                    -ms-transition: 0.8s ease-in;
+                    -o-transition: 0.8s ease-in;
+                }
+                opacity: 1;
+                transition: 0.8s;
+            }
+        }
+    }
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .banner-promo {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h1 {
+                        font-size: 50px;
+                    }
+                    p {
+                        font-size: 15px;
+                    }
+                    a {
+                        font-size: 15px;
+                        padding: 10px 15px;
+                    }
+                    margin-top: 85px;
+                }
+            }
+        }
+    }
+    .banner-promo:hover {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h1 {
+                        left: 50px;
+                    }
+                    p {
+                        left: 150px;
+                    }
+                    a {
+                        left: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .banner-promo {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h4 {
+                        font-size: 15px;
+                        letter-spacing: 2px;
+                    }
+                    h1 {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: 14px;
+                        letter-spacing: 2px;
+                    }
+                    a {
+                        font-size: 14px;
+                        letter-spacing: 2px;
+                        padding: 10px;
+                    }
+
+                    margin-top: 65px;
+                }
+            }
+        }
+    }
+    .banner-promo:hover {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h1 {
+                        left: 70px;
+                    }
+                    p {
+                        left: 100px;
+                    }
+                    a {
+                        left: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .banner-promo {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h4 {
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        
+                    }
+                    h1 {
+                        font-size: 20px;
+                        margin: 5px 0px;
+                    }
+                    p {
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        margin-bottom: 5px;
+                    }
+                    a {
+                        font-size: 11px;
+                        letter-spacing: 1px;
+                        padding: 5px;
+                    }
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    .banner-promo:hover {
+        .wr-banner {
+            .text-banner {
+                .text-animation {
+                    h4 {
+                        left: 55px;
+                    }
+                    h1 {
+                        left: 75px;
+                    }
+                    p {
+                        left: 60px;
+                    }
+                    a {
+                        left: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+

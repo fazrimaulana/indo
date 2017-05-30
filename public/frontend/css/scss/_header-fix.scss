@@ -1,0 +1,182 @@
+//----------HEADER-FIX----------//
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .header-fix {
+        .wr-header-fix {
+            .logo {
+                padding: 10px 100px;
+                border-bottom: 1px solid $grey;
+            }
+            .navigator {
+                .navi {
+                    button {
+                        background-color: transparent;
+                        color: $putih;
+                        padding: 0px;
+                    }
+                    button:hover {
+                        color: $orange;
+                    }
+                }
+                .cart {
+                    button {
+                        .badge {
+                            background-color: $putih;
+                            color: $orange;
+                        }
+                        color: $putih;
+                        background-color: transparent;
+                        border: none;
+                        padding: 0px;
+                    }
+                    button:hover {
+                        color: $orange;
+                        text-decoration: none;
+                    }
+                    .dropdown-custom {
+                        li {
+                            .left-cart {
+                                padding-left: 0px;
+                            }
+                            .right-cart {
+                                padding-right: 0px;
+                            }
+                            .list-cart {
+                                .image {
+                                    .wr-image {
+                                        img {
+                                            width: 81px;
+                                            height: 80px;
+                                            -webkit-transition: 1s ease;
+                                            -moz-transition: 1s ease;
+                                            -ms-transition: 1s ease;
+                                            -o-transition: 1s ease;
+                                            transition: 1s ease;
+                                        }
+                                        img:hover {
+                                            -webkit-transform: scale(1.3);
+                                            -moz-transform: scale(1.3);
+                                            -ms-transform: scale(1.3);
+                                            -o-transform: scale(1.3);
+                                            transform: scale(1.3);
+                                        }
+                                        position: relative;
+                                        overflow: hidden;
+                                    }
+                                }
+                                .heading-item {
+                                    .title-cart {
+                                        p {
+                                            margin-bottom: 20px;
+                                            color: $hitam;
+                                            font-family: 'Open Sans', sans-serif;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            -webkit-transition: .2s color ease-in;
+                                            -moz-transition: .2s color ease-in;
+                                            -ms-transition: .2s color ease-in;
+                                            -o-transition: .2s color ease-in;
+                                            transition: .2s color ease-in;
+                                        }
+                                        p:hover {
+                                            color: $orange;
+                                        }
+                                        a:hover {
+                                            text-decoration: none;
+                                        }
+                                    }
+                                    .hapus-cart {
+                                        button {
+                                            background-color: transparent;
+                                            padding: 0px;
+                                            -webkit-transition: .2s color ease-in;
+                                            -moz-transition: .2s color ease-in;
+                                            -ms-transition: .2s color ease-in;
+                                            -o-transition: .2s color ease-in;
+                                            transition: .2s color ease-in;
+                                        }
+                                        button:hover {
+                                            color: $merah;
+                                        }
+                                    }
+                                }
+                                .detail-item {
+                                    p {
+                                            font-size: 12px;
+                                            font-family: 'Open Sans', sans-serif;
+                                        }
+                                    .code-item {
+                                        width: 100px;
+                                    }
+                                    .jumlah-item {
+                                        width: 50px;
+                                    }
+                                }
+                            }
+                            .view-checkout {
+                                .view-cart, .checkout {
+                                    a {
+                                        color: $hitam;
+                                        font-size: 10px;
+                                        font-family: 'PT Serif', serif;
+                                        letter-spacing: 3px;
+                                        font-weight: 600;
+                                        padding: 10px;
+                                        -webkit-transition: .2s color ease-in, .2s background-color ease-in;
+                                        -moz-transition: .2s color ease-in, .2s background-color ease-in;
+                                        -ms-transition: .2s color ease-in, .2s background-color ease-in;
+                                        -o-transition: .2s color ease-in, .2s background-color ease-in;
+                                        transition: .2s color ease-in, .2s background-color ease-in;
+                                    }
+                                    a:hover {
+                                        text-decoration: none;
+                                    }
+                                    padding: 0px;
+                                    text-align: center;
+                                }
+                                .view-cart {
+                                    a {
+                                        background-color: $orange;
+                                        color: $putih
+                                    }
+                                    a:hover {
+                                        background-color: $hitam;
+                                    }
+                                }
+                                .checkout {
+                                    a {
+                                        background-color: $biru-muda;
+                                        color: $putih;
+                                    }
+                                    a:hover {
+                                        background-color: $hitam;
+                                    }
+                                }
+                            }
+                            border-top: 1px solid $grey;
+                            padding: 15px;
+                        }
+                        top: 31px;
+                        left: -70px;
+                        border-top: 3px solid $orange;
+                        border-radius: 0px;
+                        padding: 0px;
+                        width: 416px;
+                        z-index: 910;
+                    }
+                }
+                padding: 10px 15px;
+            }
+            padding: 0px;
+        }
+        background-color: $biru;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+    }
+    .banner-slider {
+        padding-top: 138px;
+    }
+}

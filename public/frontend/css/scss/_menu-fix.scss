@@ -1,0 +1,165 @@
+//----------MENU-FIX----------//
+.menu-fix {
+    .wr-menu-fix {
+        .menu {
+            ul {
+                li {
+                    a {
+                        float: left;
+                        padding: 0px 15px;
+                        color: $putih;
+                        font-family: 'PT Serif', serif;
+                        font-size: 16px;
+                        font-weight: 600;
+                        letter-spacing: 3px;
+                        border-right: 1px solid $putih;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                        color: $orange
+                    }
+                    a.contact {
+                        border: none;
+                    }
+                    .dropdown-custom {
+                        li {
+                            a {
+                                padding: 10px 20px;
+                                font-family: 'PT Serif', serif;
+                                letter-spacing: 2px;
+                                font-weight: 600;
+                                border-right: none;
+                                color: $hitam;
+                                width: 100%;
+                            }
+                            border-top: 1px solid $grey;
+                            display: inline-block;
+                            width: 100%;
+                            height: 39px;
+                        }
+                        li:hover {
+                            .dropdown-custom-2 {
+                                display: block;
+                            }
+                        }
+                        .dropdown-custom-2 {
+                            li {
+                                a {
+                                    display: block;
+                                    padding: 12px 20px;
+                                }
+                                a:hover {
+                                    background-color: #eaeaea;
+                                }
+                            height: 42px;
+                            }
+                            padding: 0px;
+                            
+                            list-style: none;
+                            display: none;
+                            position: absolute;
+                            background-color: $putih;
+                            left: 158px;
+                            top: -3px;
+                            border-left: 3px solid $orange;
+                            box-shadow: $shadow-dropdown;
+                        }
+                        top: 65px;
+                        border-top: 3px solid $orange;
+                        border-radius: 0px;
+                        padding: 0px;
+                        left: 90px;
+                        clear: both;
+                        width: 160px;
+                    }
+                    list-style: none;
+                }
+                padding: 0px;
+                margin: 0px;
+            }
+            height: 90px;
+            padding: 35px 0px;
+        }
+        padding: 0px;
+    }
+    background-color: $biru;
+    padding: 10px 0px;
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .menu-fix {
+        .wr-menu-fix {
+            .logo {
+                padding: 7px 15px;
+            }
+            .menu {
+                ul {
+                    li {
+                        a {
+                            font-size: 15px;
+                        }
+                        .dropdown-custom {
+                            li {
+                                a {
+                                    padding: 11px 20px;
+                                }
+                            }
+                            .dropdown-custom-2 {
+                                li {
+                                    a {
+                                        padding: 13px 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                height: 80px;
+            }
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .menu-fix {
+        .wr-menu-fix {
+            .logo {
+                padding: 15px;
+            }
+            .menu {
+                ul {
+                    li {
+                        a {
+                            font-size: 14px;
+                            letter-spacing: 2px;
+                            padding: 0px 10px;
+                        }
+                        .dropdown-custom {
+                            li {
+                                a {
+                                    padding: 12px 20px;
+                                }
+                            }
+                            .dropdown-custom-2 {
+                                li {
+                                    a {
+                                        padding: 13px 20px;
+                                        letter-spacing: 2px;
+                                    }
+                                }
+                            }
+                            left: 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,218 @@
+//----------VOUCHER-ADV----------//
+.voucher-adv {
+    .wr-voucher-adv {
+        .content-voucher {
+            .wr-content-voucher {
+                .heading-content {
+                    ul {
+                        li {
+                            a {
+                                float: left;
+                                padding: 0px 10px;
+                                border-right: 1px solid #b6b6b6;
+                                color: $hitam;
+                                font-size: 16px;
+                                font-family: 'PT Serif', serif;
+                                font-weight: 600;
+                                -webkit-transition: .2s color ease-in;
+                                -moz-transition: .2s color ease-in;
+                                -ms-transition: .2s color ease-in;
+                                -o-transition: .2s color ease-in;
+                                transition: .2s color ease-in;
+                            }
+                            a:hover {
+                                text-decoration: none;
+                                color: $orange;
+                            }
+                            a.active {
+                                color: $orange;
+                            }
+                            list-style: none;
+                        }
+                        overflow: hidden;
+                        margin-bottom: 0px;
+                        padding: 0px;
+                    }
+                    border-bottom: 1px solid #b6b6b6;
+                    padding: 20px 15px;
+                }
+                .body-content {
+                    ul {
+                        li {
+                            a {
+                                float: left;
+                                padding: 0px 10px;
+                                width: 250px;
+                            }
+                            a:hover {
+                                text-decoration: none;
+                            }
+                            button {
+                                font-family: 'PT Serif', serif;
+                                font-size: 14px;
+                                letter-spacing: 3px;
+                                font-weight: 600;
+                                color: $putih;
+                                background-color: $hijau;
+                                -webkit-transition: .2s background-color ease-in;
+                                -moz-transition: .2s background-color ease-in;
+                                -ms-transition: .2s background-color ease-in;
+                                -o-transition: .2s background-color ease-in;
+                                transition: .2s background-color ease-in;
+                            }
+                            button:hover {
+                                background-color: $hitam;
+                            }
+                            list-style: none;
+                        }
+                        overflow: hidden;
+                        margin-bottom: 0px;
+                        padding: 0px;
+                    }
+                    padding: 20px 15px;
+                }
+                background-color: $putih;
+                margin-bottom: 20px;
+            }
+            .content-adv-promo {
+                .wr-content-adv {
+                    background-color: $putih;
+                    padding: 30px 71px;
+                }
+            }
+        }
+        .content-adv {
+            .wr-content-adv {
+                padding: 5px 10px;
+                background-color: $putih;
+            }
+        }
+        padding: 0px;
+    }
+    padding: 70px 0px;
+    background: linear-gradient($gradien-grey); /* Standard syntax */
+	background: -webkit-linear-gradient($gradien-grey); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($gradien-grey); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($gradien-grey); /* For Firefox 3.6 to 15 */
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .voucher-adv {
+        .wr-voucher-adv {
+            .content-voucher {
+                .wr-content-voucher {
+                    .heading-content {
+                        ul {
+                            li {
+                                a {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                    .body-content {
+                        ul {
+                            li {
+                                a {
+                                    width: 225px;
+                                }
+                                button {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .content-adv-promo {
+                    .wr-content-adv {
+                        padding: 6px 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .voucher-adv {
+        .wr-voucher-adv {
+            .content-voucher {
+                .wr-content-voucher {
+                    .heading-content {
+                        ul {
+                            li {
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .body-content {
+                        ul {
+                            li {
+                                a {
+                                    width: 170px;
+                                }
+                                button {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    margin-bottom: 15px;
+                }
+                .content-adv-promo {
+                    .wr-content-adv {
+                        padding: 6px 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .voucher-adv {
+        .wr-voucher-adv {
+            .content-voucher {
+                .wr-content-voucher {
+                    .heading-content {
+                        ul {
+                            li {
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    .body-content {
+                        ul {
+                            li {
+                                a {
+                                    margin-bottom: 10px;
+                                }
+                                button {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    margin-bottom: 15px;
+                }
+                padding: 0px 15px !important;
+            }
+            .content-adv {
+                .wr-content-adv {
+                    padding: 5px 67px;
+                }
+            }
+            padding: 0px 15px;
+        }
+    }
+}

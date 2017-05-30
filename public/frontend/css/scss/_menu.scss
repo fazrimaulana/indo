@@ -1,0 +1,136 @@
+//----------MENU----------//
+.menu {
+    .wr-menu {
+        .menu-list {
+            .list {
+                a {
+                    color: $hitam;
+                    font-size: 16px;
+                    font-family: 'PT Serif', serif;
+                    padding: 0 15px;
+                    letter-spacing: 3px;
+                    font-weight: 600;
+                    border-right: 1px solid $hitam;
+                    -webkit-transition: .2s color ease-in;
+                    -moz-transition: .2s color ease-in;
+                    -ms-transition: .2s color ease-in;
+                    -o-transition: .2s color ease-in;
+                    transition: .2s color ease-in;
+                }
+                a.contact {
+                    border: none;
+                }
+                a:hover {
+                    text-decoration: none;
+                    color: $orange;
+                }
+                .dropdown-custom {
+                    li {
+                        a {
+                            padding: 10px 20px;
+                            font-family: 'PT Serif', serif;
+                            letter-spacing: 2px;
+                            font-weight: 600;
+                            border-right: none;
+                        }
+                        border-top: 1px solid $grey;
+                        display: inline-block;
+                        width: 100%;
+                    }
+                    li:hover {
+                        .dropdown-custom-2 {
+                            display: block;
+                        }
+                    }
+                    .dropdown-custom-2 {
+                        li {
+                            a {
+                                display: block;
+                                padding: 12px 20px;
+                            }
+                            a:hover {
+                                background-color: #eaeaea;
+                            }
+                           height: 47px;
+                        }
+                        padding: 0px;
+                        
+                        list-style: none;
+                        display: none;
+                        position: absolute;
+                        background-color: $putih;
+                        left: 158px;
+                        top: -3px;
+                        border-left: 3px solid $orange;
+                    }
+                    top: 44px;
+                    border-top: 3px solid $orange;
+                    border-radius: 0px;
+                    padding: 0px;
+                }
+                text-align: center;
+                float: left;
+            }
+            display: inline-block;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        padding: 24px 0;
+        height: 70px;
+        text-align: center;
+    }
+    height: 70px;
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .menu {
+        .wr-menu {
+            .menu-list {
+                .list {
+                    a {
+                        font-size: 15px;
+                    }
+                    .dropdown-custom {
+                        .dropdown-custom-2 {
+                            li {
+                                height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .menu {
+        .wr-menu {
+            .menu-list {
+                .list {
+                    a {
+                        font-size: 14px;
+                    }
+                    .dropdown-custom {
+                        .dropdown-custom-2 {
+                            li {
+                                height: 45px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+
+}

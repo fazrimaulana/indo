@@ -1,0 +1,15 @@
+//----------COPYRIGHT----------//
+.copyright {
+    .wr-copyright {
+        small {
+            color: $hitam;
+            font-weight: 600;
+        }
+        padding: 0px;
+    }
+    background: linear-gradient($gradien-grey); /* Standard syntax */
+	background: -webkit-linear-gradient($gradien-grey); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($gradien-grey); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($gradien-grey); /* For Firefox 3.6 to 15 */
+    padding: 20px 0px;
+}

@@ -1,0 +1,207 @@
+//----------NEW-PRODUCT----------//
+.new-product {
+    h2 {
+        color: $hitam;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+    h2::after {
+        content: "";
+    display: inline-block;
+    height: 0.65em;
+    vertical-align: bottom;
+    width: 90%;
+    margin-right: -100%;
+    margin-left: 30px;
+        border-top: 4px solid $hitam;
+    }
+    
+    .col-item .photo img {
+        margin: 0 auto;
+        width: 275px;
+    }
+
+    .col-item {
+        .photo {
+            .action-choice {
+                button {
+                    margin-top: 135px;
+                    color: $hitam;
+                    -webkit-transition: .2s background-color ease-in, .2s color ease-in;
+                    -moz-transition: .2s background-color ease-in, .2s color ease-in;
+                    -ms-transition: .2s background-color ease-in, .2s color ease-in;
+                    -o-transition: .2s background-color ease-in, .2s color ease-in;
+                    transition: .2s background-color ease-in, .2s color ease-in;
+                }
+                button:hover {
+                    background-color: $biru-muda;
+                    color: $putih;
+                }
+            position:absolute;
+            top:-145px;
+            visibility: hidden;
+            color:white;
+            padding:10px;
+            width: 250px;
+            height: 300px;
+            }
+        }
+        .info {
+            p {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .col-item:hover {
+        img {
+            filter: brightness(70%);
+            -webkit-filter: brightness(70%);
+            -moz-filter: brightness(70%);
+            -ms-filter: brightness(70%);
+            -o-filter: brightness(70%);
+            transition: .5s filter ease-in-out;
+            -webkit-transition: .5s filter ease-in-out;
+            -moz-transition: .5s filter ease-in-out;
+            -ms-transition: .5s filter ease-in-out;
+            -o-transition: .5s filter ease-in-out;
+        }
+        .action-choice {
+            visibility: visible;
+            top: 0px;
+            left: 25px;
+            transition: 1s;
+        }
+    }
+
+    .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+        display: block;
+        max-width: 100%;
+    }
+
+    .col-item .info {
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+        margin-top: 1px;
+    }
+
+    .col-item .price {
+        /*width: 50%;*/
+        float: left;
+        margin-top: 5px;
+    }
+
+    .col-item .price p {
+        line-height: 20px;
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .price-text-color {
+        color: $biru-muda;
+    }
+
+    .col-item .info .rating {
+        color: #777;
+    }
+
+    .col-item .rating {
+        /*width: 50%;*/
+        float: left;
+        font-size: 17px;
+        text-align: right;
+        line-height: 52px;
+        margin-bottom: 10px;
+        height: 52px;
+    }
+
+    .clear-left {
+        clear: left;
+    }
+
+    .controls {
+        a {
+            background-color: $hijau;
+            -webkit-transition: .2s background-color ease-in;
+            -moz-transition: .2s background-color ease-in;
+            -ms-transition: .2s background-color ease-in;
+            -o-transition: .2s background-color ease-in;
+            transition: .2s background-color ease-in;
+        }
+        a:hover {
+            background-color: $hitam;
+        }
+    }
+    [data-slide="prev"] {
+        margin-right: 10px;
+    }
+    padding: 70px 0;
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+   .new-product {
+       h2::after {
+           width: 81%;
+       }
+
+       .col-item:hover {
+            .action-choice {
+                visibility: visible;
+                top: -25px;
+                left: 0px;
+                transition: 1s;
+            }
+        }
+   }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .new-product {
+        h2 {
+            font-size: 26px;
+        }
+        h2::after {
+            width: 71%;
+        }
+
+        .col-item:hover {
+            .action-choice {
+                    visibility: visible;
+                    top: -60px;
+                    left: -27px;
+                    transition: 1s;
+            }
+        }
+   }
+}
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .new-product {
+        .heading-new-product {
+            h2 {
+                font-size: 22px;
+            }
+            h2::after {
+                width: 45%;
+            }
+            padding: 0px 15px;
+        }
+
+        .col-item:hover {
+            .action-choice {
+                visibility: visible;
+                top: 10px;
+                left: 95px;
+                transition: 1s;
+            }
+        }
+    }
+}

@@ -1,0 +1,295 @@
+//----------HEADER----------//
+.header {
+    .header-content {
+        .left {
+            .nav > li > a {
+                color: $putih;
+                font-family: 'PT Serif', serif;
+                letter-spacing: 3px;
+                font-size: 16px;
+                border-radius: 0px;
+                padding: 6px 12px;
+                font-weight: 600;
+                border-right: 1px solid $putih;
+                -webkit-transition: .2s color ease-in;
+                -moz-transition: .2s color ease-in;
+                -ms-transition: .2s color ease-in;
+                -o-transition: .2s color ease-in;
+                transition: .2s color ease-in;
+            }
+            .nav > li > a:hover {
+                background-color: transparent;
+                color: $orange;
+            }
+            li {
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: $putih;
+                    font-family: 'PT Serif', serif;
+                    letter-spacing: 3px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    -webkit-transition: .2s color ease-in;
+                    -moz-transition: .2s color ease-in;
+                    -ms-transition: .2s color ease-in;
+                    -o-transition: .2s color ease-in;
+                    transition: .2s color ease-in;
+                }
+                button:hover {
+                    color: $orange;
+                }
+                .dropdown-custom {
+                    li {
+                        a {
+                            padding: 10px 20px;
+                            font-family: 'PT Serif', serif;
+                            letter-spacing: 2px;
+                            font-weight: 600;
+                        }
+                        border-top: 1px solid $grey;
+                    }
+                    top: 65px;
+                    border-top: 3px solid $orange;
+                    border-radius: 0px;
+                    padding: 0px;
+                }
+            }
+            margin: 32px 0px;
+            padding: 0px;
+        }
+        .mid {
+            h1 {
+                margin: 0px;
+                text-align: center;
+                color: $putih;
+                letter-spacing: 2px;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            padding: 0px;
+            margin: 30px 0px;
+        }
+        .right {
+            li {
+                button.dropdown {
+                    .badge {
+                        background-color: $putih;
+                        color: $orange;
+                    }
+                    padding: 6px;
+                    margin: 8px 0px;
+                    background-color: transparent;
+                    border: none;
+                    font-family: 'PT Serif', serif;
+                    font-size: 16px;
+                    color: $putih;
+                    -webkit-transition: .2s color ease-in;
+                    -moz-transition: .2s color ease-in;
+                    -ms-transition: .2s color ease-in;
+                    -o-transition: .2s color ease-in;
+                    transition: .2s color ease-in;
+                }
+                button.dropdown:hover {
+                    color: $orange;
+                }
+                .dropdown-custom {
+                    li {
+                        .left-cart {
+                            padding-left: 0px;
+                        }
+                        .right-cart {
+                            padding-right: 0px;
+                        }
+                        .list-cart {
+                            .image {
+                                .wr-image {
+                                    img {
+                                        width: 77px;
+                                        height: 80px;
+                                        -webkit-transition: 1s ease;
+                                        -moz-transition: 1s ease;
+                                        -ms-transition: 1s ease;
+                                        -o-transition: 1s ease;
+                                        transition: 1s ease;
+                                    }
+                                    img:hover {
+                                        -webkit-transform: scale(1.3);
+                                        -moz-transform: scale(1.3);
+                                        -ms-transform: scale(1.3);
+                                        -o-transform: scale(1.3);
+                                        transform: scale(1.3);
+                                    }
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+                            }
+                            .heading-item {
+                                .title-cart {
+                                    p {
+                                        margin-bottom: 20px;
+                                        color: $hitam;
+                                        font-family: 'Open Sans', sans-serif;
+                                        font-weight: 600;
+                                        -webkit-transition: .2s color ease-in;
+                                        -moz-transition: .2s color ease-in;
+                                        -ms-transition: .2s color ease-in;
+                                        -o-transition: .2s color ease-in;
+                                        transition: .2s color ease-in;
+                                    }
+                                    p:hover {
+                                        color: $orange;
+                                    }
+                                    a:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                                .hapus-cart {
+                                    button {
+                                        background-color: transparent;
+                                        padding: 0px;
+                                        -webkit-transition: .2s color ease-in;
+                                        -moz-transition: .2s color ease-in;
+                                        -ms-transition: .2s color ease-in;
+                                        -o-transition: .2s color ease-in;
+                                        transition: .2s color ease-in;
+                                    }
+                                    button:hover {
+                                        color: $merah;
+                                    }
+                                }
+                            }
+                            .detail-item {
+                                p {
+                                        font-size: 14px;
+                                        font-family: 'Open Sans', sans-serif;
+                                    }
+                                .code-item {
+                                    width: 100px;
+                                }
+                                .jumlah-item {
+                                    width: 50px;
+                                }
+                            }
+                        }
+                        .view-checkout {
+                            .view-cart, .checkout {
+                                a {
+                                    color: $hitam;
+                                    font-size: 14px;
+                                    font-family: 'PT Serif', serif;
+                                    letter-spacing: 3px;
+                                    font-weight: 600;
+                                    padding: 10px;
+                                    -webkit-transition: .2s color ease-in, .2s background-color ease-in;
+                                    -moz-transition: .2s color ease-in, .2s background-color ease-in;
+                                    -ms-transition: .2s color ease-in, .2s background-color ease-in;
+                                    -o-transition: .2s color ease-in, .2s background-color ease-in;
+                                    transition: .2s color ease-in, .2s background-color ease-in;
+                                }
+                                a:hover {
+                                    text-decoration: none;
+                                }
+                                padding: 0px;
+                                text-align: center;
+                            }
+                            .view-cart {
+                                a {
+                                    background-color: $orange;
+                                    color: $putih
+                                }
+                                a:hover {
+                                    background-color: $hitam;
+                                }
+                            }
+                            .checkout {
+                                a {
+                                    background-color: $biru-muda;
+                                    color: $putih;
+                                }
+                                a:hover {
+                                    background-color: $hitam;
+                                }
+                            }
+                        }
+                        border-top: 1px solid $grey;
+                        padding: 15px;
+                    }
+                    top: 75px;
+                    border-top: 3px solid $orange;
+                    border-radius: 0px;
+                    padding: 0px;
+                    width: 400px;
+                }
+            }
+            margin: 24px 0px;
+            padding: 0px;
+        }
+        height: 100px;
+        padding: 0px;
+    }
+    height: 100px;
+    background-color: $biru;
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .header {
+        .header-content {
+            .left {
+                .nav > li > a {
+                    font-size: 15px;
+                }
+                li {
+                    button {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        .header-content {
+            .left {
+                .nav > li > a {
+                    font-size: 14px;
+                }
+                li {
+                    button {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .mid {
+                h1 {
+                    font-size: 28px;
+                }
+            }
+            .right {
+                li {
+                    .navbar-form {
+                        .input-group {
+                            width: 180px;
+                        }
+                    }
+                }
+                li {
+                    button {
+                        font-size: 14px;
+                    }
+                    .dropdown-custom {
+                        right: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+

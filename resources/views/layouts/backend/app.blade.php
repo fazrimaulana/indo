@@ -326,6 +326,17 @@
                                 @endif
 
                             @endforeach
+
+                            <li class="nav-item start 
+                                @if(Route::currentRouteName() == '')  
+                                    active open
+                                @endif">
+                                <a href="{{ url('/') }}" class="nav-link" target="_blank">
+                                    <i class="icon-globe"></i>
+                                    <span class="title">Website</span>
+                                </a>
+                            </li>
+
                         </ul>
                         <!-- END SIDEBAR MENU -->
                         <!-- END SIDEBAR MENU -->

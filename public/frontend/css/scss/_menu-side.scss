@@ -1,0 +1,106 @@
+//----------MENU-SIDE----------//
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .menu-side {
+        .heading-menu-side {
+            .menu-account, .menu-user {
+                margin-top: 10px;
+            }
+            .menu-user {
+                .dropdown-custom {
+                    li {
+                        height: 30px;
+                        list-style: none;
+                        padding: 9px 0px;
+                    }
+                    padding-left: 20px;
+                }
+            }
+            a {
+                color: $putih;
+                font-family: 'PT Serif', serif;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 3px;
+            }
+            a:hover {
+                text-decoration: none;
+                color: $orange;
+            }
+            padding-bottom: 20px;
+            border-bottom: 1px solid $grey;
+            margin-bottom: 20px;
+        }
+        .panel-group {
+            .panel {
+                .panel-heading {
+                    a {
+                        color: $putih;
+                        letter-spacing: 3px;
+                        font-family: 'PT Serif', serif;
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                        color: $orange;
+                    }
+                    background-color: transparent;
+                    padding: 10px 0px;
+                }
+                .dropdown-custom {
+                    ul {
+                        li {
+                            a {
+                                color: $putih;
+                                letter-spacing: 2px;
+                                font-family: 'PT Serif', serif;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                            a:hover {
+                                text-decoration: none;
+                                color: $orange;
+                            }
+                            .dropdown-custom-2 {
+                                li {
+                                    a {
+                                        color: $hitam;
+                                    }
+                                    a:hover {
+                                        color: $orange;
+                                    }
+                                }
+                                background-color: $putih;
+                                position: relative;
+                                left: 100px;
+                                top: -18px;
+                                display: none;
+                                border-left: 3px solid $orange;
+                                width: 150px;
+                                box-shadow: $shadow-dropdown;
+                            }
+                            list-style: none;
+                            height: 30px;
+                        }
+                        li:hover {
+                            .dropdown-custom-2 {
+                                display: block;
+                            }
+                        }
+                        padding-left: 20px;
+                        margin: 0px;
+                    }
+                }
+                background-color: transparent;
+                margin: 0px;
+                border: none;
+            }
+        }
+        width: 250px;
+        background-color: $hitam;
+        padding: 30px 15px;
+    }
+}

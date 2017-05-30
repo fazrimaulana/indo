@@ -1,0 +1,188 @@
+//----------FOOTER----------//
+.footer {
+    .wr-footer {
+        .heading-content {
+            h3 {
+                color: $putih;
+                font-weight: 600;
+                margin: 0px;
+                letter-spacing: 2px;
+            }
+            margin-bottom: 20px;
+        }
+        .body-content {
+            ul {
+                li {
+                    a {
+                        color: $putih;
+                        font-family: 'PT Serif', serif;
+                        letter-spacing: 3px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        -webkit-transition: .2s color ease-in;
+                        -moz-transition: .2s color ease-in;
+                        -ms-transition: .2s color ease-in;
+                        -o-transition: .2s color ease-in;
+                        transition: .2s color ease-in;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                        color: $orange;
+                    }
+                    list-style: none;
+                    line-height: 40px;
+                }
+                padding: 0px;
+            }
+        }
+        .tags {
+            .heading-content {
+                margin-bottom: 40px;
+            }
+            .body-content {
+                ul {
+                    li {
+                        a {
+                            padding: 10px 15px;
+                        }
+                        line-height: 40px;
+                        list-style: none;
+                     float: left;
+                     border: 1px solid $grey;
+                    }
+                    display: block;
+                }
+            }
+        }
+        .news-letter {
+            .wr-news-letter {
+                .body-content {
+                    input[type=text] {
+                        margin-bottom: 10px;
+                    }
+                    button {
+                        background-color: $orange;
+                        color: $putih;
+                        letter-spacing: 3px;
+                        font-family: 'PT Serif',serif;
+                        font-size: 14px;
+                        -webkit-transition: .2s background-color ease-in;
+                        -moz-transition: .2s background-color ease-in;
+                        -ms-transition: .2s background-color ease-in;
+                        -o-transition: .2s background-color ease-in;
+                        transition: .2s background-color ease-in;
+                    }
+                    button:hover {
+                        background-color: $hitam;
+                    }
+                }
+                padding: 20px;
+                border: 1px solid $putih;
+            }
+            .sosmed {
+                ul {
+                    li {
+                        a {
+                            float: left;
+                            border: 1px solid $putih;
+                            color: $putih;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            -webkit-transition: .2s background-color ease-in, .2s border-color ease-in;
+                            -moz-transition: .2s background-color ease-in, .2s border-color ease-in;
+                            -ms-transition: .2s background-color ease-in, .2s border-color ease-in;
+                            -o-transition: .2s background-color ease-in, .2s border-color ease-in;
+                            transition: .2s background-color ease-in, .2s border-color ease-in;
+                        }
+                        a:hover {
+                            text-decoration: none;
+                            background-color: $hitam;
+                            border-color: $hitam;
+                        }
+                        list-style: none;
+                    }
+                    padding: 0px;
+                }
+            }
+        }
+        padding: 0px;
+    }
+    padding: 70px 0px;
+    background-color: $biru;
+}
+
+//----------DEVICE (1024-1248)----------//
+
+@media (min-width: 1024px) and (max-width: 1248px) {
+    .footer {
+        .wr-footer {
+            .heading-content {
+                h3 {
+                    font-size: 22px;
+                }
+            }
+            
+        }
+    }
+}
+
+//----------DEVICE TABLET (768-1023)----------//
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        .wr-footer {
+            .heading-content {
+                h3 {
+                    font-size: 22px;
+                }
+            }
+            .information, .account {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+//----------DEVICE SMARTPHONE (MAX-WIDTH = 767)----------//
+
+@media (max-width: 767px) {
+    .footer {
+        .wr-footer {
+            .heading-content {
+                h3 {
+                    font-size: 22px;
+                }
+                margin-bottom: 15px;
+            }
+            .body-content {
+                ul {
+                    li {
+                        a {
+                            font-size: 12px;
+                        }
+                        line-height: 35px;
+                    }
+                }
+            }
+            .information, .account, .tags {
+                margin-bottom: 30px;
+            }
+            .tags {
+                .heading-content {
+                    margin-bottom: 30px;
+                }
+                display: inline-block;
+            }
+            .news-letter {
+                .wr-news-letter {
+                    .body-content {
+                        button {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            padding: 0px 15px;
+        }
+    }
+}
