@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->string('discount');
             $table->datetime('start_time_discount')->nullable();
             $table->datetime('end_time_discount')->nullable();
-            $table->text('custom');
+            $table->text('custom')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');

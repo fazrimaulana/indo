@@ -19,4 +19,8 @@ Route::get('/', 'FrontendController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index', 'middleware' => ['checkrole:root|admin']]);
+
+Route::get('/check-provider/{custom}', 'FrontendController@checkProvider');
+
+Route::get('/get-provider/{id}', 'FrontendController@getProvider');

@@ -91,6 +91,15 @@ class ProductController extends Controller
 				$end_time_discount 	 = $request->end_time_discount;
 			}
 
+			if ($request->custom) {
+				$custom = explode(" ", $request->custom);
+				$datasCustom = json_encode( array("prefix" => $custom) );	
+			}
+			else
+			{
+				$datasCustom = null;
+			}
+
 			$product = new Product;
 			$product->category_id = $request->category;
 			$product->parent_id = $request->parent_id;
@@ -106,7 +115,7 @@ class ProductController extends Controller
 			$product->discount = $discount;
 			$product->start_time_discount = $start_time_discount;
 			$product->end_time_discount = $end_time_discount;
-			$product->custom = $request->custom;
+			$product->custom = $datasCustom;
 
 			$product->save();
 
@@ -247,6 +256,15 @@ class ProductController extends Controller
 				$end_time_discount 	 = $request->end_time_discount;
 			}
 
+			if ($request->custom) {
+				$custom = explode(" ", $request->custom);
+				$datasCustom = json_encode( array("prefix" => $custom) );	
+			}
+			else
+			{
+				$datasCustom = null;
+			}
+
 			$product->update([
 
 					"category_id" => $request->category,
@@ -263,7 +281,7 @@ class ProductController extends Controller
 					"discount" => $discount,
 					"start_time_discount" => $start_time_discount,
 					"end_time_discount" => $end_time_discount,
-					"custom" => $request->custom
+					"custom" => $datasCustom
 
 				]);
 

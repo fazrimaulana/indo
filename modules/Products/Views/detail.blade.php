@@ -197,11 +197,17 @@
                                         </div>
                                     </div>
 
+                                    @php
+                                        $custom=null;
+                                        if($product->custom!=null){
+                                            $custom = json_decode($product->custom);
+                                        } 
+                                        @endphp
                                     <div class="form-body">
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Custom</label>
                                             <div class="col-md-10">
-                                                <textarea name="custom" class="form-control" placeholder="custom" rows="8" readonly>{{ $product->custom }}</textarea>
+                                                <textarea name="custom" class="form-control" placeholder="custom" rows="8" readonly>@if($custom!=null)@foreach($custom->prefix as $prefix){{ $prefix }} @endforeach @endif</textarea>
                                             </div>
                                         </div>
                                     </div>

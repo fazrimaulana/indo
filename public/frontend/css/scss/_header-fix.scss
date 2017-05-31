@@ -89,6 +89,7 @@
                                     }
                                     .hapus-cart {
                                         button {
+                                            color: $hitam;
                                             background-color: transparent;
                                             padding: 0px;
                                             -webkit-transition: .2s color ease-in;
@@ -165,6 +166,9 @@
                         padding: 0px;
                         width: 416px;
                         z-index: 910;
+                    }
+                    .dropdown-backdrop {
+                        display: none;
                     }
                 }
                 padding: 10px 15px;

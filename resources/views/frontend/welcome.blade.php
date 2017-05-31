@@ -61,9 +61,14 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
                   </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+
                 </li>
               </ul><!--END OF .DROPDOWN-CUSTOM-->
               @else
@@ -339,29 +344,38 @@
             <a href="#">HOME</a>
           </li>
           <li class="list dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">FASHION</a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">KATEGORI</a>
             <ul class="dropdown-menu dropdown-custom" role="menu">
-                <li>
-                  <a href="#">
-                    <i class="fa fa-female" aria-hidden="true"></i> Women
-                  </a>
-                  <ul class="dropdown-custom-2">
-                    <li>
-                      <a href="#">Bluss</a>
-                    </li>
-                    <li>
-                      <a href="#">Dress</a>
-                    </li>
-                    <li>
-                      <a href="#">Kemeja</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-male" aria-hidden="true"></i> Men
-                  </a>
-                </li>
+
+                @php
+                  use Modules\Categories\Models\Category;
+                @endphp
+
+                @foreach($categories as $category)
+
+                  <li>
+                    <a href="{{ url('/category/'.$category->slug) }}">
+                      <i class="{{ $category->icon }}" aria-hidden="true"></i> {{ title_case($category->name) }}
+                    </a>
+
+                    @php
+                      $childCategory = Category::where('parent_id', $category->id)->get();
+                    @endphp
+                    @if($childCategory!=null)
+
+                      <ul class="dropdown-custom-2">
+                        @foreach($childCategory as $child)
+                          <li>
+                            <a href="{{ url('/category/'.$child->slug) }}">{{ title_case($child->name) }}</a>
+                          </li>
+                        @endforeach
+                      </ul>
+
+                    @endif
+                  </li>
+
+                @endforeach
+
             </ul><!--END OF .DROPDOWN-CUSTOM-->
           </li>
           <li class="list">
@@ -388,30 +402,35 @@
                 <a href="#">HOME</a>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">FASHION</a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">KATEGORI</a>
                 <ul class="dropdown-menu dropdown-custom" role="menu">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-female" aria-hidden="true"></i> Women
-                      </a>
+
+                @foreach($categories as $category)
+
+                  <li>
+                    <a href="{{ url('/category/'.$category->slug) }}">
+                      <i class="{{ $category->icon }}" aria-hidden="true"></i> {{ title_case($category->name) }}
+                    </a>
+
+                    @php
+                      $childCategory = Category::where('parent_id', $category->id)->get();
+                    @endphp
+                    @if($childCategory!=null)
+
                       <ul class="dropdown-custom-2">
-                        <li>
-                          <a href="#">Bluss</a>
-                        </li>
-                        <li>
-                          <a href="#">Dress</a>
-                        </li>
-                        <li>
-                          <a href="#">Kemeja</a>
-                        </li>
+                        @foreach($childCategory as $child)
+                          <li>
+                            <a href="{{ url('/category/'.$child->slug) }}">{{ title_case($child->name) }}</a>
+                          </li>
+                        @endforeach
                       </ul>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-male" aria-hidden="true"></i> Men
-                      </a>
-                    </li>
-                </ul><!--END OF .DROPDOWN-CUSTOM-->
+
+                    @endif
+                  </li>
+
+                @endforeach
+
+            </ul><!--END OF .DROPDOWN-CUSTOM-->
               </li>
               <li>
                 <a href="#">ABOUT</a>
@@ -474,31 +493,30 @@
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <a data-toggle="collapse" href="#dropdown-fashion">FASHION</a>
+            <a data-toggle="collapse" href="#dropdown-kategori">KATEGORI</a>
           </div>
-          <div id="dropdown-fashion" class="panel-collapse collapse dropdown-custom">
+          <div id="dropdown-kategori" class="panel-collapse collapse dropdown-custom">
             <ul>
-              <li>
-                <a href="#">
-                  <i class="fa fa-female" aria-hidden="true"></i> Women
-                </a>
-                <ul class="dropdown-custom-2">
+              @foreach($categories as $category)
                   <li>
-                    <a href="#">Bluss</a>
+                    <a href="{{ url('/category/'.$category->slug) }}">
+                      <i class="{{ $category->icon }}" aria-hidden="true"></i> {{ title_case($category->name) }}
+                    </a>
+
+                    @php
+                      $childCategory = Category::where('parent_id', $category->id)->get();
+                    @endphp
+                    @if($childCategory!=null)
+                      <ul class="dropdown-custom-2">
+                        @foreach($childCategory as $child)
+                          <li>
+                            <a href="{{ url('/category/'.$child->slug) }}">{{ title_case($child->name) }}</a>
+                          </li>
+                        @endforeach
+                      </ul>
+                    @endif
                   </li>
-                  <li>
-                    <a href="#">Dress</a>
-                  </li>
-                  <li>
-                    <a href="#">Kemeja</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fa fa-male" aria-hidden="true"></i> Men
-                </a>
-              </li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -633,33 +651,21 @@
                   <ul>
                     <li>
                       <a>
-                        <input type="text" class="form-control" placeholder="Nomor Telepon...">
+                        <form action="#" method="get" accept-charset="utf-8">
+                        <input type="text" class="form-control" placeholder="Nomor Telepon..." id="no_hp">
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <select class="form-control" id="selectPulsa" disabled>
+                            
+                        </select>
                       </a>
                     </li>
                     <li>
                     <a>
-                        <select class="form-control" id="sel1">
-                          <option>
-                            <p>Nominal</p>
-                          </option>
-                          <option>
-                            <p>Rp.10.000</p>
-                          </option>
-                          <option>
-                            <p>Rp.20.000</p>
-                          </option>
-                          <option>
-                            <p>Rp.50.000</p>
-                          </option>
-                          <option>
-                            <p>Rp.100.000</p>
-                          </option>
-                        </select>
-                    </a>
-                    </li>
-                    <li>
-                    <a>
-                        <button type="button" class="btn">BELI</button>
+                        <button type="submit" class="btn">BELI</button>
+                        </form>
                     </a>
                     </li>
                   </ul>
@@ -1575,6 +1581,72 @@
 
         $('#bootstrap-touch-slider').bsTouchSlider();
 
+        $('#no_hp').val('');
+
+        $('#selectPulsa').prop('disabled', true);
+
+        $('#no_hp').keyup(function(){
+
+            if (this.value.length == 4) {
+              
+              var code = $(this).val();
+              var url = "{{ url('/check-provider') }}";
+              
+              $.ajax({
+                url: url+"/"+code,
+                type: 'GET',
+                data: {custom: code},
+                success: function(data){
+
+                  if (data.id!=null) {
+
+                    $.ajax({
+
+                        url:"{{ url('/get-provider') }}"+"/"+data.id,
+                        type: 'GET',
+                        data: {id: data.id},
+                        success: function(datas){
+
+                          $('#selectPulsa').empty();
+
+                          if (datas!="") {
+
+                            $.each(datas, function(index, value){
+                              $('#selectPulsa').append(" <option value='" + value.id + "'>"+ value.name + " - Rp. " +value.price +"</option> ");
+                            });
+
+                            $('#selectPulsa').prop('disabled', false);
+
+                          }
+
+                          else{
+
+                            $('#selectPulsa').empty();
+                            $('#selectPulsa').prop('disabled', true);
+
+                          }
+
+                        }
+
+                    });
+
+                  }
+
+                  else{
+
+                    $('#selectPulsa').empty();
+                    $('#selectPulsa').prop('disabled', true);
+
+                  }  
+
+
+                }
+
+              });
+
+            }
+
+        });
 
       </script>
     
