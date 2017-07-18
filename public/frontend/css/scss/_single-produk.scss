@@ -1,0 +1,398 @@
+//----------SINGLE-PRODUK----------//
+.single-produk {
+    .wr-single-produk {
+        .left {
+            .produk {
+                .image-produk {
+                    .tab-custom {
+                        .pane-custom {
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        img {
+                            filter: brightness(70%);
+                            -webkit-filter: brightness(70%);
+                            -moz-filter: brightness(70%);
+                            -ms-filter: brightness(70%);
+                            -o-filter: brightness(70%);
+                            -webkit-transition: 1s ease;
+                            -moz-transition: 1s ease;
+                            -ms-transition: 1s ease;
+                            -o-transition: 1s ease;
+                            transition: 1s ease;
+                            width: 220px;
+                            height: 250px;
+                        }
+                        img:hover {
+                            filter: brightness(100%);
+                            -webkit-filter: brightness(100%);
+                            -moz-filter: brightness(100%);
+                            -ms-filter: brightness(100%);
+                            -o-filter: brightness(100%);
+                            -webkit-transform: scale(1.08);
+                            -moz-transform: scale(1.08);
+                            -ms-transform: scale(1.08);
+                            -o-transform: scale(1.08);
+                            transform: scale(1.08);
+                        }
+                        margin-bottom: 5px;
+                    }
+                    .nav-custom {
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                        a {
+                            padding: 0px;
+                            border-radius: 0px;
+                        }
+                    }
+                    .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+                        background-color: transparent;
+                        border: 1px solid $hitam;
+                    }
+                }
+                .nama-produk {
+                    .heading-produk {
+                        h4 {
+                            margin-top: 0px;
+                            letter-spacing: 1px;
+                            font-weight: 700;
+                            font-size: 22px;
+                        }
+                        .rate-wish {
+                            .rating {
+                                i {
+                                    color: $orange;
+                                }
+                                padding: 6px 0px;
+                            }
+                        }
+                        button {
+                            font-size: 12px;
+                            font-family: 'PT Serif', serif;
+                            letter-spacing: 2px;
+                            font-weight: 600;
+                            background-color: $cream;
+                            color: $putih;
+                            -webkit-transition: .2s background-color ease-in;
+                            -moz-transition: .2s background-color ease-in;
+                            -ms-transition: .2s background-color ease-in;
+                            -o-transition: .2s background-color ease-in;
+                            transition: .2s background-color ease-in;
+                        }
+                        button:hover {
+                            background-color: $hitam;
+                        }
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid $grey;
+                    }
+                    .body-produk {
+                        h4 {
+                            font-size: 28px;
+                            font-weight: 700;
+                        }
+                        p {
+                            font-family: 'Open Sans', sans-serif;
+                            letter-spacing: 1px;
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                        input#quantity {
+                            text-align: center;
+                            border-color: $hitam;
+                        }
+                        button.quantity-left-minus, button.quantity-right-plus {
+                            background-color: transparent;
+                            border-color: $hitam;
+                        }
+                        .icon-min, .icon-plus {
+                            color: $hitam;
+                        }
+                    }
+                    .footer-produk {
+                        button {
+                            font-family: 'PT Serif', serif;
+                            letter-spacing: 2px;
+                            font-weight: 600;
+                            margin: 15px 0px;
+                            color: $putih;
+                            font-size: 14px;
+                            -webkit-transition: .2s background-color ease-in;
+                            -moz-transition: .2s background-color ease-in;
+                            -ms-transition: .2s background-color ease-in;
+                            -o-transition: .2s background-color ease-in;
+                            transition: .2s background-color ease-in;
+                        }
+                        button:hover {
+                            background-color: $hitam;
+                        }
+                        .beli {
+                            background-color: $hijau;
+                            margin-right: 10px;
+                        }
+                        
+                        .tambah-cart {
+                            background-color: $biru-muda;
+                        }
+                    }
+                }
+            }
+            .detail-ulasan {
+                .nav-tabs-custom {
+                    li {
+                        a {
+                            font-family: 'PT Serif', serif;
+                            font-size: 16px;
+                            letter-spacing: 2px;
+                            font-weight: 600;
+                            color: $hitam;
+                        }
+                    }
+                }
+                .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+                    color: $orange;
+                }
+                .tab-custom {
+                    h4 {
+                        margin-top: 0px;
+                        letter-spacing: 2px;
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: 600;
+                    }
+                    p {
+                        font-size: 15px;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                    .informasi {
+                        p {
+                            letter-spacing: 1px;
+                        }
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    .detail-produk {
+                        padding-top: 20px;
+                    }
+                    .list-ulasan {
+                        .heading-list-ulasan {
+                            .image {
+                                img {
+                                    border-radius: 50%;
+                                }
+                            }
+                            .nama-rate {
+                                .nama-user {
+                                    p {
+                                        letter-spacing: 1px;
+                                        font-weight: 600;
+                                        margin-bottom: 0px;
+                                    }
+                                    padding-right: 10px;
+                                    border-right: 1px solid #ddd;
+                                    margin-right: 10px;
+                                }
+                                .rating {
+                                    i {
+                                        color: $orange;
+                                    }
+                                }
+                                margin-bottom: 10px;
+                            }
+                            .date {
+                                p {
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: $grey-text;
+                                    letter-spacing: 1px;
+                                }
+                            }
+                            margin-bottom: 20px;
+                        } 
+                        .body-list-ulasan {
+                            p {
+                                margin-bottom: 0px;
+                            }
+                        }
+                        padding-bottom: 20px;
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    .view-more {
+                        a {
+                            font-family: 'Open Sans', sans-serif;
+                            font-size: 16px;
+                            letter-spacing: 2px;
+                            color: $biru-muda;
+                            font-weight: 600;
+                            -webkit-transition: .2s color ease-in;
+                            -moz-transition: .2s color ease-in;
+                            -ms-transition: .2s color ease-in;
+                            -o-transition: .2s color ease-in;
+                            transition: .2s color ease-in;
+                        }
+                        a:hover {
+                            color: $hitam;
+                        }
+                    }
+                    padding: 30px 15px;
+                    border: 1px solid #ddd;
+                    border-top: transparent;
+                }
+                padding-top: 70px;
+            }
+        }
+        .right {
+            .pengiriman {
+                table {
+                    tr {
+                        td {
+                            p {
+                                margin-bottom: 0px;
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                            }
+                            padding: 4px 8px;
+                            text-align: center;
+                        }
+                    }
+                    width: 100%;
+                }
+                padding: 15px 0px;
+            }
+            border: 2px solid $grey;
+        }
+        .related-product {
+            .wr-related-product {
+                .heading-related-product {
+                    h2 {
+                        margin: 0px;
+                        font-weight: 600;
+                    }
+                    h2::after {
+                        content: "";
+                    display: inline-block;
+                    height: 0.60em;
+                    vertical-align: bottom;
+                    width: 78%;
+                    margin-right: -100%;
+                    margin-left: 30px;
+                        border-top: 4px solid $hitam;
+                    }
+                    margin-bottom: 30px;
+                }
+                .list-item {
+                    .col-item .photo img {
+                        margin: 0 auto;
+                    }
+                    .col-item {
+                        .photo {
+                            .action-choice {
+                                button {
+                                    margin-top: 135px;
+                                    color: $hitam;
+                                    -webkit-transition: .2s background-color ease-in, .2s color ease-in;
+                                    -moz-transition: .2s background-color ease-in, .2s color ease-in;
+                                    -ms-transition: .2s background-color ease-in, .2s color ease-in;
+                                    -o-transition: .2s background-color ease-in, .2s color ease-in;
+                                    transition: .2s background-color ease-in, .2s color ease-in;
+                                }
+                                button:hover {
+                                    background-color: $biru-muda;
+                                    color: $putih;
+                                }
+                            position:absolute;
+                            top:-145px;
+                            visibility: hidden;
+                            color:white;
+                            padding:10px;
+                            width: 250px;
+                            height: 300px;
+                            }
+                        }
+                        .info {
+                            p {
+                                font-family: 'Open Sans', sans-serif;
+                                font-weight: 600;
+                            }
+                            .sebelum {
+                                color: $merah;
+                            }
+                            .sebelum::before {
+                                content: "";
+                            display: inline-block;
+                            height: 0.70em;
+                            vertical-align: bottom;
+                            width: 58%;
+                            margin-right: -58%;
+                            margin-left: 1px;
+                            border-top: 2px solid $merah;
+                            }
+                            .rating {
+                                i {
+                                    color: $orange;
+                                }
+                            }
+                        }
+                        margin-bottom: 10px;
+                    }
+
+                    .col-item:hover {
+                        img {
+                            filter: brightness(70%);
+                            -webkit-filter: brightness(70%);
+                            -moz-filter: brightness(70%);
+                            -ms-filter: brightness(70%);
+                            -o-filter: brightness(70%);
+                            transition: .5s filter ease-in-out;
+                            -webkit-transition: .5s filter ease-in-out;
+                            -moz-transition: .5s filter ease-in-out;
+                            -ms-transition: .5s filter ease-in-out;
+                            -o-transition: .5s filter ease-in-out;
+                        }
+                        .action-choice {
+                            visibility: visible;
+                            top: -55px;
+                            left: -25px;
+                            transition: 1s;
+                        }
+                    }
+
+                    .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+                        display: block;
+                        max-width: 100%;
+                    }
+
+                    .col-item .info {
+                        padding: 10px;
+                        border-radius: 0 0 5px 5px;
+                        margin-top: 1px;
+                    }
+
+                    .col-item .price {
+                        /*width: 50%;*/
+                        float: left;
+                        margin-top: 5px;
+                    }
+
+                    .col-item .price p {
+                        line-height: 20px;
+                        margin: 0;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+
+                    .price-text-color {
+                        color: $biru-muda;
+                    }
+
+                    .clear-left {
+                        clear: left;
+                    }
+                }
+            }
+            padding-top: 70px;
+        }
+        padding: 0px;
+    }
+    padding: 70px 0px;
+}

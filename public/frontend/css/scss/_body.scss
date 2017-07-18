@@ -7,5 +7,11 @@ body {
     p {
         font-size: 16px;
     }
+    .capital {
+        text-transform: capitalize;
+    }
+    .capslock {
+        text-transform: uppercase;
+    }
     background-color: $putih;
 }

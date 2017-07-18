@@ -10,14 +10,19 @@ Route::group(['middleware'=>['web', 'auth'],'prefix' => 'dashboard'], function()
 					'uses' => 'Modules\Orders\Controllers\OrderController@index'
 				]);	
 
-			Route::get('/add', [
-					'as' => 'dashboard.orders.add', 
-					'uses' => 'Modules\Orders\Controllers\OrderController@add'
-				]);
+			// Route::get('/add', [
+			// 		'as' => 'dashboard.orders.add', 
+			// 		'uses' => 'Modules\Orders\Controllers\OrderController@add'
+			// 	]);
 
 			Route::get('/{order}/edit', [
 					'as' => 'dashboard.orders.edit', 
 					'uses' => 'Modules\Orders\Controllers\OrderController@getData'
+				]);
+
+			Route::post('/{order}/edit', [
+					'as' => 'dashboard.orders.edit', 
+					'uses' => 'Modules\Orders\Controllers\OrderController@update'
 				]);
 
 			Route::get('/search', [
@@ -52,11 +57,6 @@ Route::group(['middleware'=>['web', 'auth'],'prefix' => 'dashboard'], function()
 			Route::post('/add', [
 					'as' => 'dashboard.orders.transaction.methods.add', 
 					'uses' => 'Modules\Orders\Controllers\TransactionMethodController@store'
-				]);
-
-			Route::get('/{transactionMethod}/getData', [
-					'as' => 'dashboard.orders.transaction.methods.getdata', 
-					'uses' => 'Modules\Orders\Controllers\TransactionMethodController@getData'
 				]);
 
 			Route::post('/edit', [

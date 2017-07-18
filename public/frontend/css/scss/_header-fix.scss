@@ -35,7 +35,7 @@
                         color: $orange;
                         text-decoration: none;
                     }
-                    .dropdown-custom {
+                    .dropdown-cart {
                         li {
                             .left-cart {
                                 padding-left: 0px;
@@ -139,7 +139,7 @@
                                 }
                                 .view-cart {
                                     a {
-                                        background-color: $orange;
+                                        background-color: $biru-muda;
                                         color: $putih
                                     }
                                     a:hover {
@@ -148,7 +148,7 @@
                                 }
                                 .checkout {
                                     a {
-                                        background-color: $biru-muda;
+                                        background-color: $hijau;
                                         color: $putih;
                                     }
                                     a:hover {
@@ -166,6 +166,8 @@
                         padding: 0px;
                         width: 416px;
                         z-index: 910;
+                        height: 300px;
+                        overflow-x: auto;
                     }
                     .dropdown-backdrop {
                         display: none;

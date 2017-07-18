@@ -26,7 +26,7 @@
             "title":"Categories Management",
             "icon":"fa fa-thumb-tack",
             "permission":"can_see_categories_menu",
-            "sequence":"94"
+            "sequence":"93"
         },
         "categories_index": {
             "menu_id":"dashboard.categories.index",

@@ -11,7 +11,7 @@ class OrderDetail extends Model
 	protected $primarykey = "id";
 
 	protected $fillable = [
-		"product_id", "order_id", "product_name", "qty", "product_price", "discount_price", "subtotal"
+		"product_id", "order_id", "product_name", "qty", "product_price", "discount_price", "adm_price", "subtotal", "status"
 	];
 
 	public function order()

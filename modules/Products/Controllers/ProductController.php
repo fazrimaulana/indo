@@ -218,7 +218,7 @@ class ProductController extends Controller
 	}
 
 	public function update(Request $request, Product $product)
-	{
+	{	
 		$method_permission = "can_edit_products";
 		if(Auth::user()->hasRole('root') || Auth::user()->can($method_permission) ){
 

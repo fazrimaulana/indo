@@ -1,0 +1,33 @@
+{
+    "name": "Confirmation",
+    "description": "Confirmation",
+    "keyword": ["Confirmation"],
+    "version": "0.0.1",
+    "author": "Fazri Maulana",
+    "category": ["Confirmation"],
+    "web": "facebook.com/fazri.maulana1",
+    "repository": "github.com",
+    "sequence": "1",
+    "license": "MIT",
+    "permission":[
+        "can_see_confirmation",
+        "can_add_confirmation",
+        "can_edit_confirmation",
+        "can_delete_confirmation",
+        "can_see_confirmation_index",
+        "can_see_confirmation_menu"
+    ],
+    "menu": {
+        "confirmation_parent": {
+            "menu_id":"dashboard.confirmations",
+            "parent_id":"",
+            "name":"Confirmations",
+            "href":"dashboard/confirmations",
+            "target":"",
+            "title":"Confirmation Management",
+            "icon":"fa fa-thumb-tack",
+            "permission":"can_see_confirmation_menu",
+            "sequence":"95"
+        }
+    }
+}

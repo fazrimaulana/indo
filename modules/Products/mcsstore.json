@@ -29,7 +29,7 @@
             "title":"Products Management",
             "icon":"fa fa-folder",
             "permission":"can_see_products_menu",
-            "sequence":"93"
+            "sequence":"92"
         },
         "products_index": {
             "menu_id":"dashboard.products.index",

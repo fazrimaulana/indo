@@ -88,6 +88,11 @@
                     margin-left: 1px;
                        border-top: 2px solid $merah;
                     }
+                    .rating {
+                        i {
+                            color: $orange;
+                        }
+                    }
                 }
                 margin-bottom: 10px;
             }
@@ -140,24 +145,9 @@
                 color: $biru-muda;
             }
 
-            .col-item .info .rating {
-                color: #777;
-            }
-
-            .col-item .rating {
-                /*width: 50%;*/
-                float: left;
-                font-size: 17px;
-                text-align: right;
-                line-height: 52px;
-                margin-bottom: 10px;
-                height: 52px;
-            }
-
             .clear-left {
                 clear: left;
             }
-
         }
         padding: 0px;
     }

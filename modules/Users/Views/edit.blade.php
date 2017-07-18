@@ -211,8 +211,11 @@
 
                         <div class="form-actions">
                             <div class="row">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <button type="submit" class="btn green">Update</button>
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn green">Update</button>
+                                        <a href="{{ url('/dashboard/users') }}" class="btn btn-default">Cancel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

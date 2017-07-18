@@ -1,0 +1,72 @@
+//----------SINGLE-HISTORY----------//
+.single-history {
+    .wr-single-history {
+        .left {
+            .pembelian {
+                .panel-heading {
+                    h3 {
+                        color: $putih;
+                        letter-spacing: 2px;
+                    }
+                    background-color: $biru;
+                    border: 1px solid $biru;
+                }
+                .panel-body {
+                    .list-detail {
+                        span {
+                            color: $grey-text;
+                            font-size: 12px;
+                            letter-spacing: 1px;
+                        }
+                        p {
+                            font-family: 'Open-Sans', sans-serif;
+                            color: $hitam;
+                        }
+                        button {
+                            background-color: $hijau;
+                            color: $putih;
+                            -webkit-transition: .2s background-color ease-in;
+                            -moz-transition: .2s background-color ease-in;
+                            -ms-transition: .2s background-color ease-in;
+                            -o-transition: .2s background-color ease-in;
+                            transition: .2s background-color ease-in;
+                        }
+                        button:hover {
+                            background-color: $hitam;
+                        }
+                        padding: 15px;
+                        border-top: 1px solid $biru;
+                        overflow: hidden;
+                    }
+                    padding: 0px;
+                }
+                border: 1px solid $biru;
+            }
+        }
+        .right {
+            .status {
+                .panel-heading {
+                    h3 {
+                        color: $putih;
+                        letter-spacing: 2px;
+                    }
+                    background-color: $biru;
+                    border: 1px solid $biru;
+                }
+                .panel-body {
+                    .list-status {
+                        span {
+                            color: $grey-text;
+                            font-size: 12px;
+                            letter-spacing: 1px;
+                        }
+                        padding: 15px;
+                        border-top: 1px solid $biru;
+                    }
+                    padding: 0px;
+                }
+                border-color: $biru;
+            }
+        }
+    }
+}

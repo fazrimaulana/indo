@@ -1,0 +1,251 @@
+//----------LIST-PRODUCT----------//
+.list-product {
+    .wr-list-product {
+        padding: 0px;
+    }
+    .right {
+        .shorting {
+            button {
+                background-color: $biru-muda;
+                color: $putih;
+                font-family: 'PT Serif', serif;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                -webkit-transition: .2s background-color ease-in;
+                -moz-transition: .2s background-color ease-in;
+                -ms-transition: .2s background-color ease-in;
+                -o-transition: .2s background-color ease-in;
+                transition: .2s background-color ease-in;
+            }
+            button:hover {
+                background-color: $hitam;
+            }
+            .dropdown-custom {
+                li {
+                    a {
+                        padding: 10px 20px;
+                        font-family: 'PT Serif', serif;
+                        letter-spacing: 2px;
+                        font-weight: 600;
+                        border-right: none;
+                        -webkit-transition: .2s color ease-in;
+                        -moz-transition: .2s color ease-in;
+                        -ms-transition: .2s color ease-in;
+                        -o-transition: .2s color ease-in;
+                        transition: .2s color ease-in;
+                    }
+                        border-top: 1px solid $grey;
+                }
+                li:hover {
+                    a {
+                        color: $orange;
+                    }
+                }
+                padding: 0px;
+            }
+            margin-bottom: 20px;
+        }
+        .list-item {
+            .col-item .photo img {
+                margin: 0 auto;
+                width: 275px;
+            }
+            .col-item {
+                .photo {
+                    .action-choice {
+                        button {
+                            margin-top: 135px;
+                            color: $hitam;
+                            -webkit-transition: .2s background-color ease-in, .2s color ease-in;
+                            -moz-transition: .2s background-color ease-in, .2s color ease-in;
+                            -ms-transition: .2s background-color ease-in, .2s color ease-in;
+                            -o-transition: .2s background-color ease-in, .2s color ease-in;
+                            transition: .2s background-color ease-in, .2s color ease-in;
+                        }
+                        button:hover {
+                            background-color: $biru-muda;
+                            color: $putih;
+                        }
+                    position:absolute;
+                    top:-145px;
+                    visibility: hidden;
+                    color:white;
+                    padding:10px;
+                    width: 250px;
+                    height: 300px;
+                    }
+                }
+                .info {
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: 600;
+                    }
+                    .sebelum {
+                        color: $merah;
+                    }
+                    .sebelum::before {
+                        content: "";
+                    display: inline-block;
+                    height: 0.65em;
+                    vertical-align: bottom;
+                    width: 100%;
+                    margin-right: -100%;
+                    margin-left: 1px;
+                       border-top: 2px solid $merah;
+                    }
+                    .rating {
+                        i {
+                            color: $orange;
+                        }
+                    }
+                }
+                margin-bottom: 10px;
+            }
+
+            .col-item:hover {
+                img {
+                    filter: brightness(70%);
+                    -webkit-filter: brightness(70%);
+                    -moz-filter: brightness(70%);
+                    -ms-filter: brightness(70%);
+                    -o-filter: brightness(70%);
+                    transition: .5s filter ease-in-out;
+                    -webkit-transition: .5s filter ease-in-out;
+                    -moz-transition: .5s filter ease-in-out;
+                    -ms-transition: .5s filter ease-in-out;
+                    -o-transition: .5s filter ease-in-out;
+                }
+                .action-choice {
+                    visibility: visible;
+                    top: -25px;
+                    left: 0px;
+                    transition: 1s;
+                }
+            }
+
+            .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+                display: block;
+                max-width: 100%;
+            }
+
+            .col-item .info {
+                padding: 10px;
+                border-radius: 0 0 5px 5px;
+                margin-top: 1px;
+            }
+
+            .col-item .price {
+                /*width: 50%;*/
+                float: left;
+                margin-top: 5px;
+            }
+
+            .col-item .price p {
+                line-height: 20px;
+                margin: 0;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            .price-text-color {
+                color: $biru-muda;
+            }
+
+            .clear-left {
+                clear: left;
+            }
+        }
+        .best-product {
+            .wr-best-product {
+                .heading-best-product {
+                    h2 {
+                        margin: 0px;
+                        font-weight: 600;
+                    }
+                    h2::after {
+                        content: "";
+                    display: inline-block;
+                    height: 0.50em;
+                    vertical-align: bottom;
+                    width: 74%;
+                    margin-right: -100%;
+                    margin-left: 30px;
+                        border-top: 4px solid $hitam;
+                    }
+                    margin-bottom: 30px;
+                }
+            }
+            padding-top: 70px;
+        }
+    }
+
+    .left {
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            margin: 0px;
+        }
+        .search {
+            .heading-search {
+                margin-bottom: 10px;
+            }
+            padding: 15px 0px;
+            border-bottom: 1px solid $grey;
+        }
+
+        .range-harga {
+            .heading-range {
+                margin-bottom: 10px;
+            }
+            .body-range {
+                input {
+                    margin-bottom: 10px;
+                }
+                button {
+                    background-color: $hijau;
+                    font-family: 'PT Serif',serif;
+                    color: $putih;
+                    letter-spacing: 1px;
+                    -webkit-transition: .2s background-color ease-in;
+                    -moz-transition: .2s background-color ease-in;
+                    -ms-transition: .2s background-color ease-in;
+                    -o-transition: .2s background-color ease-in;
+                    transition: .2s background-color ease-in;
+                }
+                button:hover {
+                    background-color: $hitam;
+                }
+            }
+            padding: 15px 0px;
+            border-bottom: 1px solid $grey;
+        }
+        .pengiriman {
+            .heading-pengiriman {
+                margin-bottom: 10px;
+            }
+            padding: 15px 0px;
+            border-bottom: 1px solid $grey;
+        }
+        .produk-pilihan {
+            .heading-produk-pilihan {
+                margin-bottom: 10px;
+            }
+            .body-produk-pilihan {
+                .pilihan {
+                    .list {
+                        input {
+                            margin-right: 10px;
+                        }
+                        list-style: none;
+                        margin-bottom: 10px;
+                    }
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+            padding: 15px 0px;
+        }
+        border: 2px solid $grey;
+    }
+    padding: 70px 0px;
+}

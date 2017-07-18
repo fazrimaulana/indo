@@ -1,0 +1,148 @@
+//----------PAGE-CART----------//
+.page-cart {
+    .wr-page-cart {
+        .cart {
+            .panel-heading-custom {
+                h3 {
+                    color: $putih;
+                    letter-spacing: 1px;
+                }
+                background-color: $biru;
+                border: 1px solid $biru;
+            }
+            .list-cart {
+                .list {
+                    .image {
+                        img {
+                            filter: brightness(70%);
+                            -webkit-filter: brightness(70%);
+                            -moz-filter: brightness(70%);
+                            -ms-filter: brightness(70%);
+                            -o-filter: brightness(70%);
+                            -webkit-transition: 1s ease;
+                            -moz-transition: 1s ease;
+                            -ms-transition: 1s ease;
+                            -o-transition: 1s ease;
+                            transition: 1s ease;
+                        }
+                        img:hover{
+                            filter: brightness(100%);
+                            -webkit-filter: brightness(100%);
+                            -moz-filter: brightness(100%);
+                            -ms-filter: brightness(100%);
+                            -o-filter: brightness(100%);
+                            -webkit-transform: scale(1.08);
+                            -moz-transform: scale(1.08);
+                            -ms-transform: scale(1.08);
+                            -o-transform: scale(1.08);
+                            transform: scale(1.08);
+                        }
+                        position: relative;
+                        overflow: hidden;
+                        width: 146px;
+                    }
+                    .detail {
+                        h4 {
+                            font-family: 'Open Sans', sans-serif;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            margin: 0px;
+                        }
+                        a {
+                            color: $hitam;
+                            -webkit-transition: .2s color ease-in;
+                            -moz-transition: .2s color ease-in;
+                            -ms-transition: .2s color ease-in;
+                            -o-transition: .2s color ease-in;
+                            transition: .2s color ease-in;
+                        }
+                        a:hover {
+                            text-decoration: none;
+                            color: $orange;
+                        }
+                        p {
+                            margin-top: 10px;
+                            margin-bottom: 0px;
+                        }
+                        margin-bottom: 10px;
+                    }
+                    .qty {
+                        p {
+                            margin-bottom: 0px;
+                        }
+                        input#quantity {
+                            text-align: center;
+                            border-color: $hitam;
+                        }
+                        button.quantity-left-minus, button.quantity-right-plus {
+                            background-color: transparent;
+                            border-color: $hitam;
+                        }
+                        .icon-min, .icon-plus {
+                            color: $hitam;
+                        }
+                    }
+                    .harga {
+                        button {
+                            padding: 0px;
+                            background-color: transparent;
+                            -webkit-transition: .2s color ease-in;
+                            -moz-transition: .2s color ease-in;
+                            -ms-transition: .2s color ease-in;
+                            -o-transition: .2s color ease-in;
+                            transition: .2s color ease-in;
+                        }
+                        button:hover {
+                            color: $merah;
+                        }
+                    }
+                    .total {
+                        span {
+                            color: grey;
+                        }
+                    }
+                    .belanja {
+                        a {
+                            background-color: $biru-muda;
+                            color: $putih;
+                            letter-spacing: 2px;
+                            font-family: 'PT Serif', serif;
+                            font-weight: 600;
+                            -webkit-transition: .2s background-color ease-in;
+                            -moz-transition: .2s background-color ease-in;
+                            -ms-transition: .2s background-color ease-in;
+                            -o-transition: .2s background-color ease-in;
+                            transition: .2s background-color ease-in;
+                        }
+                        a:hover {
+                            background-color: $hitam;
+                        }
+                    }
+                    .bayar {
+                        a {
+                            background-color: $hijau;
+                            color: $putih;
+                            letter-spacing: 2px;
+                            font-family: 'PT Serif', serif;
+                            font-weight: 600;
+                            -webkit-transition: .2s background-color ease-in;
+                            -moz-transition: .2s background-color ease-in;
+                            -ms-transition: .2s background-color ease-in;
+                            -o-transition: .2s background-color ease-in;
+                            transition: .2s background-color ease-in;
+                        }
+                        a:hover {
+                            background-color: $hitam;
+                        }
+                    }
+                    padding: 15px 0px;
+                    border-top: 1px solid $biru;
+                }
+                padding: 0px 15px;
+            }
+            border-color: $biru;
+        }
+        padding: 0px;
+    }
+    padding: 70px 0px;
+}

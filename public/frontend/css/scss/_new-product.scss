@@ -52,6 +52,11 @@
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 600;
             }
+            .rating {
+                i {
+                    color: $orange;
+                }
+            }
         }
     }
 
@@ -101,20 +106,6 @@
 
     .price-text-color {
         color: $biru-muda;
-    }
-
-    .col-item .info .rating {
-        color: #777;
-    }
-
-    .col-item .rating {
-        /*width: 50%;*/
-        float: left;
-        font-size: 17px;
-        text-align: right;
-        line-height: 52px;
-        margin-bottom: 10px;
-        height: 52px;
     }
 
     .clear-left {

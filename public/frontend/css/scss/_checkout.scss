@@ -1,0 +1,228 @@
+//----------CHECKOUT----------//
+.checkout {
+    .wr-checkout {
+        .right {
+            .cart {
+                .panel-heading-custom {
+                    h3, a {
+                        letter-spacing: 2px;
+                        color: $putih;
+                    }
+                    a:hover {
+                        text-decoration: none;
+                        color: $orange;
+                        -webkit-transition: .2s color ease-in;
+                        -moz-transition: .2s color ease-in;
+                        -ms-transition: .2s color ease-in;
+                        -o-transition: .2s color ease-in;
+                        transition: .2s color ease-in;
+                    }
+                    background-color: $biru;
+                    
+                }
+                .list-cart {
+                    .list {
+                        .image {
+                            img {
+                                filter: brightness(70%);
+                                -webkit-filter: brightness(70%);
+                                -moz-filter: brightness(70%);
+                                -ms-filter: brightness(70%);
+                                -o-filter: brightness(70%);
+                                -webkit-transition: 1s ease;
+                                -moz-transition: 1s ease;
+                                -ms-transition: 1s ease;
+                                -o-transition: 1s ease;
+                                transition: 1s ease;
+                            }
+                            img:hover{
+                                filter: brightness(100%);
+                                -webkit-filter: brightness(100%);
+                                -moz-filter: brightness(100%);
+                                -ms-filter: brightness(100%);
+                                -o-filter: brightness(100%);
+                                -webkit-transform: scale(1.08);
+                                -moz-transform: scale(1.08);
+                                -ms-transform: scale(1.08);
+                                -o-transform: scale(1.08);
+                                transform: scale(1.08);
+                            }
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .detail {
+                            h4 {
+                                margin: 0px;
+                                font-family: 'Open Sans', sans-serif;
+                                font-weight: 600;
+                                letter-spacing: 1px;
+                            }
+                            a {
+                                color: $hitam;
+                                -webkit-transition: .2s color ease-in;
+                                -moz-transition: .2s color ease-in;
+                                -ms-transition: .2s color ease-in;
+                                -o-transition: .2s color ease-in;
+                                transition: .2s color ease-in;
+                            }
+                            a:hover {
+                                text-decoration: none;
+                                color: $orange;
+                            }
+                            p {
+                                margin-top: 10px;
+                                margin-bottom: 0px;
+                            }
+                        }
+                        .bayar {
+                            button {
+                                background-color: $hijau;
+                                color: $putih;
+                                letter-spacing: 3px;
+                                font-family: 'PT Serif', serif;
+                                font-weight: 600;
+                                -webkit-transition: .2s background-color ease-in;
+                                -moz-transition: .2s background-color ease-in;
+                                -ms-transition: .2s background-color ease-in;
+                                -o-transition: .2s background-color ease-in;
+                                transition: .2s background-color ease-in;
+                            }
+                            button:hover {
+                                background-color: $hitam;
+                            }
+                            margin-top: 30px;
+                        }
+                        
+                        padding: 15px 0px;
+                        border-top: 1px solid $biru;
+                    }
+                    padding-top: 0px;
+                }
+                border-color: $biru;
+            }
+        }
+
+        .left {
+            .shipping {
+                .panel-heading-custom {
+                    h3 {
+                        color: $putih;
+                        letter-spacing: 2px;
+                    }
+                    background-color: $biru;
+                }
+                .panel-body {
+                    form {
+                        table {
+                            tr {
+                                td {
+                                    p {
+                                        margin-bottom: 0px;
+                                        letter-spacing: 2px;
+                                    }
+                                    input, .show-tick {
+                                        margin-bottom: 15px;
+                                    }
+                                    padding: 0px 15px;
+                                }
+                            }
+                            width: 100%;
+                        }
+                    }
+                    padding: 15px 0px;
+                }
+                border-color: $biru;
+            }
+            .metode-payment {
+                .panel-heading-custom {
+                    h3 {
+                        color: $putih;
+                        letter-spacing: 2px;
+                    }
+                    background-color: $biru;
+                }
+                .panel-body {   
+                    .funkyradio {
+                        div {
+                            clear: both;
+                            overflow: hidden;
+                        }
+
+                        label {
+                            width: 100%;
+                            border-radius: 3px;
+                            border: 1px solid #D1D3D4;
+                            font-weight: normal;
+                        }
+
+                        input[type="radio"],
+                        input[type="checkbox"] {
+
+                            &:empty {
+                                display: none;
+
+                                ~ label {
+                                    position: relative;
+                                    line-height: 2.5em;
+                                    text-indent: 3.25em;
+                                    margin-top: 2em;
+                                    cursor: pointer;
+                                    user-select: none;
+
+                                    &:before {
+                                        position: absolute;
+                                        display: block;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        content: '';
+                                        width: 2.5em;
+                                        background: #D1D3D4;
+                                        border-radius: 3px 0 0 3px;
+                                    }
+                                }
+                            }
+
+                            &:hover:not(:checked) ~ label {
+                                color: #888;
+
+                                &:before {
+                                    content: '\2714';
+                                    text-indent: .9em;
+                                    color: #C2C2C2;
+                                }
+                            }
+
+                            &:checked ~ label {
+                                color: #777;
+
+                                &:before {
+                                    content: '\2714';
+                                    text-indent: .9em;
+                                    color: #333;
+                                    background-color: #ccc;
+                                }
+                            }
+
+                            &:focus ~ label:before {
+                                box-shadow: 0 0 0 3px #999;
+                            }
+                        }
+                        &-info {
+                            input[type="radio"],
+                            input[type="checkbox"] {
+                                &:checked ~ label:before {
+                                    color: #fff;
+                                    background-color: $biru-muda;
+                                }
+                            }
+                        }
+                    } 
+                }
+                border-color: $biru;
+            }
+        }
+        padding: 0px;
+    }
+    padding: 70px 0px;
+}

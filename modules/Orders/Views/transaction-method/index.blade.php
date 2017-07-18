@@ -77,7 +77,7 @@
                                         <td> {{ $method->description }} </td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="javascript:;" class="btn btn-info btn-sm btn-4 edit" data-id="{{ $method->id }}">Edit</a>
+                                                <a href="javascript:;" class="btn btn-info btn-sm btn-4 edit" data-id="{{ $method->id }}" data-name="{{ $method->name }}" data-description="{{ $method->description }}">Edit</a>
                                                 <a href="javascript:;" class="btn btn-danger btn-sm btn-6 delete" data-id="{{ $method->id }}" >Delete</a>
                                                 <a href="{{ url('/dashboard/transaction-methods/'.$method->id.'/detail') }}" class="btn btn-sm btn-success button-4">Detail</a>
                                             </div>
@@ -186,21 +186,33 @@
         
         $('.edit').on('click', function(){
             var id = $(this).data("id");
-            var url = "{{ url('/dashboard/transaction-methods') }}";
+            var name = $(this).data("name");
+            var description = $(this).data("description");
+
+            // var url = "{{ url('/dashboard/transaction-methods') }}";
             var $form = $("#formEditTransactionMethod");
 
-            $.get(url+'/'+id+'/getData', function(data){
-
-                $form.find("#id").val(data.id);
-                $form.find("#name").val(data.name);
-                $form.find("#description").val(data.description);
-
-                $("#modalEditTransactionMethod").modal({
-                    "show"      : true,
-                    "backdrop"  : "static"
-                });
-
+            $form.find("#id").val(id);
+            $form.find("#name").val(name);
+            $form.find("#description").val(description);
+            $("#modalEditTransactionMethod").modal({
+                "show"      : true,
+                "backdrop"  : "static"
             });
+
+
+            // $.get(url+'/'+id+'/getData', function(data){
+
+            //     $form.find("#id").val(data.id);
+            //     $form.find("#name").val(data.name);
+            //     $form.find("#description").val(data.description);
+
+            //     $("#modalEditTransactionMethod").modal({
+            //         "show"      : true,
+            //         "backdrop"  : "static"
+            //     });
+
+            // });
 
         });
 

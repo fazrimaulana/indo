@@ -30,7 +30,7 @@
         <link href="{{ url('/backend/assets/layouts/layout/css/themes/darkblue.min.css') }}" rel="stylesheet" type="text/css" id="style_color" />
         <link href="{{ url('/backend/assets/layouts/layout/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" />
+        
 
         @yield('css')
 
@@ -62,32 +62,47 @@
                         <ul class="nav navbar-nav pull-right">
                             <!-- BEGIN NOTIFICATION DROPDOWN -->
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                            <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+
+                            <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <i class="icon-bell"></i>
-                                    <span class="badge badge-default"> 7 </span>
+                                    @php
+                                        use App\Confirmation;
+                                        $cNotif = Confirmation::where('read', 0)->get();
+                                    @endphp
+                                    <span class="badge badge-default"> {{ $cNotif->count() }}  </span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="external">
-                                        <h3>
-                                            <span class="bold">12 pending</span> notifications</h3>
-                                        <a href="page_user_profile_1.html">view all</a>
+                                        <h3>You have
+                                            <span class="bold">{{ $cNotif->count() }}</span> Notifications</h3>
+                                        <a href="app_inbox.html">view all</a>
                                     </li>
                                     <li>
-                                        <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                        <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                            @foreach($cNotif as $cNotifData)
                                             <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">just now</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-success">
-                                                            <i class="fa fa-plus"></i>
-                                                        </span> New user registered. </span>
+                                                <a href="{{ url('/dashboard/confirmations/'.$cNotifData->id.'/detail') }}">
+                                                    <span class="photo">
+                                                        @if($cNotifData->transfer_img!=null)
+                                                            <img src="{{ url($cNotifData->transfer_img) }}" class="img-circle" alt=""> </span>
+                                                        @else
+                                                            <img src="{{ url('/frontend/images/empty.jpg') }}" class="img-circle" alt=""> </span>
+                                                        @endif
+                                                    <span class="subject">
+                                                        <span class="from"> {{ $cNotifData->account_name }} </span>
+                                                        <span class="time">{{ $cNotifData->created_at->diffForHumans() }} </span>
+                                                    </span>
+                                                    <span class="message"> {{ $cNotifData->confirmation_name }} </span>
                                                 </a>
                                             </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
+
+
                             <!-- END NOTIFICATION DROPDOWN -->
                             <!-- BEGIN INBOX DROPDOWN -->
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->

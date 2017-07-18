@@ -97,7 +97,7 @@
                                     <select class="form-control" name="parent_id">
                                         <option value="0">None</option>
                                         @foreach($productParent as $parent)
-                                            <option value="{{ $parent->id }}">{{ title_case($parent->name) }}</option>
+                                            <option value="{{ $parent->id }}">{{ title_case($parent->name) }} - {{ title_case($parent->category->name) }}</option>
                                         @endforeach
                                     </select>
                                     @if($errors->has('parent_id'))
@@ -189,7 +189,7 @@
 
                         <div class="form-body">
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Description</label>
+                                <label class="col-md-2 control-label">Description <span class="required"> * </span></label>
                                 <div class="col-md-10">
                                     <textarea name="description" class="form-control" placeholder="description" rows="8"></textarea>
                                     @if($errors->has('description'))
@@ -265,8 +265,11 @@
 
                         <div class="form-actions">
                             <div class="row">
-                                <div class="col-md-offset-2 col-md-9">
-                                    <button type="submit" class="btn green">Simpan</button>
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn green">Save</button>
+                                        <a href="{{ url('/dashboard/products') }}" class="btn btn-default">Cancel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

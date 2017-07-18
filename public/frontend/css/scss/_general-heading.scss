@@ -1,0 +1,14 @@
+//----------GENERAL-HEADING----------//
+.general-heading {
+    h1 {
+        color: $hitam;
+        margin: 0px;
+        letter-spacing: 2px;
+    }
+    background: linear-gradient($gradien-grey); /* Standard syntax */
+	background: -webkit-linear-gradient($gradien-grey); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($gradien-grey); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($gradien-grey); /* For Firefox 3.6 to 15 */
+    height: 150px;
+    padding: 56px 0px;
+}

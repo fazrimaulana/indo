@@ -19,4 +19,9 @@ class Gallery extends Model
         return $this->belongsToMany('Modules\Products\Models\Product', 'product_gallery', 'gallery_id', 'product_id')->withPivot('set_utama');
     }
 
+    public function slideshow()
+    {
+    	$this->hasOne('Modules\Frontpage\Models\Slideshow', 'gallery_id', 'id');
+    }
+
 }

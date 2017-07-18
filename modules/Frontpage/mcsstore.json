@@ -1,0 +1,45 @@
+{
+    "name": "Frontpage",
+    "description": "Frontpage",
+    "keyword": ["Frontpage"],
+    "version": "0.0.1",
+    "author": "Fazri Maulana",
+    "category": ["Frontpage"],
+    "web": "facebook.com/fazri.maulana1",
+    "repository": "github.com",
+    "sequence": "1",
+    "license": "MIT",
+    "permission":[
+        "can_see_frontpage",
+        "can_see_frontpage_index",
+        "can_see_frontpage_menu",
+        "can_see_slideshow",
+        "can_add_slideshow",
+        "can_edit_slideshow",
+        "can_delete_slideshow"
+    ],
+    "menu": {
+        "frontpage_parent": {
+            "menu_id":"dashboard.frontpage",
+            "parent_id":"",
+            "name":"Frontpage",
+            "href":"#",
+            "target":"",
+            "title":"Frontpage Management",
+            "icon":"fa fa-globe",
+            "permission":"can_see_frontpage_menu",
+            "sequence":"99"
+        },
+        "slideshow_index": {
+            "menu_id":"dashboard.frontpage.slideshow.index",
+            "parent_id":"dashboard.frontpage",
+            "name":"Slideshow",
+            "href":"dashboard/frontpage/slideshow",
+            "target":"#",
+            "title":"Frontpage Management",
+            "icon":"fa fa-puzzle",
+            "permission":"can_see_slideshow_index",
+            "sequence":"1"
+        }
+    }
+}

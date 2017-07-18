@@ -50,21 +50,29 @@
                                         <div class="caption">
                                             <i class="fa fa-shopping-cart"></i>Order Details 
                                         </div>
-                                        <div class="actions">
-                                            <a href="javascript:;" class="btn btn-default btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit </a>
-                                        </div>
+                                        
                                     </div>
                                     <div class="portlet-body">
                                         <div class="row static-info">
                                             <div class="col-md-5 name"> Order #: </div>
                                             <div class="col-md-7 value">
-                                                {{ $order->id }}
+                                                {{ $order->code }}
                                             </div>
                                         </div>
                                         <div class="row static-info">
                                             <div class="col-md-5 name"> Order Date  </div>
                                             <div class="col-md-7 value"> {{ $order->created_at }} </div>
+                                        </div>
+                                        <div class="row static-info">
+                                            <div class="col-md-5 name"> Courier  </div>
+                                            <div class="col-md-7 value"> {{ $order->courier }} </div>
+                                        </div>
+                                        @php
+                                            $service = json_decode($order->service);
+                                        @endphp
+                                        <div class="row static-info">
+                                            <div class="col-md-5 name"> Service  </div>
+                                            <div class="col-md-7 value"> {{ $service->service }} </div>
                                         </div>
                                         <div class="row static-info">
                                             <div class="col-md-5 name"> Order Status: </div>
@@ -88,11 +96,6 @@
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class="fa fa-user"></i>Customer Information 
-                                        </div>
-                                        <div class="actions">
-                                            <a href="javascript:;" class="btn btn-default btn-sm">
-                                                <i class="fa fa-pencil"></i> Edit 
-                                            </a>
                                         </div>
                                     </div>
                                     <div class="portlet-body">
@@ -124,10 +127,6 @@
                                         <div class="caption">
                                             <i class="fa fa-shopping-cart"></i>Shopping Cart
                                         </div>
-                                        <div class="actions">
-                                            <a href="javascript:;" class="btn btn-default btn-sm">
-                                            <i class="fa fa-pencil"></i> Edit </a>
-                                        </div>
                                     </div>
                                     <div class="portlet-body">
                                         
@@ -146,46 +145,36 @@
                                                 </thead>
                                                 <tbody>
 
-                                                    <?php
-                                                        $totalDiscountAmount = 0;
-                                                        $subTotal = 0;
-                                                        $totalOriginalPrice = 0;
-                                                    ?> 
+                                                    @php
+
+                                                        $totalPurchases = 0;
+
+                                                    @endphp
 
                                                     @foreach($order->orderDetail as $orderDetail)
 
-                                                        <?php
+                                                    @php
 
-                                                            $discountAmount = ($orderDetail->product->price * $orderDetail->discount_price) / 100;
-                                                            $totalDiscountAmount += $discountAmount;
+                                                        
+                                                        $discountAmount = ($orderDetail->product_price * $orderDetail->discount_price) / 100;
 
-                                                            $totalOriginalPrice += $orderDetail->product->price;
+                                                        $price = $orderDetail->product_price - $discountAmount;
 
-                                                            $price = $orderDetail->product->price - $discountAmount;
+                                                        $total = $price * $orderDetail->qty;
 
-                                                            $total = $price * $orderDetail->qty;
+                                                        $totalPurchases += $total;
 
-                                                            $subTotal += $total;
+                                                    @endphp
 
-                                                        ?>
-
-                                                        <tr>
-                                                            <td> {{ $orderDetail->product->name }} </td>
-                                                            <td> 
-                                                                Rp. {{ App\Helpers\Money::setRupiah($orderDetail->product->price) }} 
-                                                            </td>
-                                                            <td> {{ $orderDetail->discount_price }}% </td>
-                                                            <td> 
-                                                                Rp. {{ App\Helpers\Money::setRupiah($discountAmount) }} 
-                                                            </td>
-                                                            <td> 
-                                                                Rp. {{ App\Helpers\Money::setRupiah($price) }} 
-                                                            </td>
-                                                            <td> {{ $orderDetail->qty }} </td>
-                                                            <td> 
-                                                                Rp. {{ App\Helpers\Money::setRupiah($total) }} 
-                                                            </td>
-                                                        </tr>
+                                                    <tr>
+                                                        <td>{{ $orderDetail->product_name }}</td>
+                                                        <td>Rp. {{ App\Helpers\Money::setRupiah($orderDetail->product_price) }}</td>
+                                                        <td>{{ $orderDetail->discount_price }}%</td>
+                                                        <td>Rp. {{ App\Helpers\Money::setRupiah($discountAmount) }}</td>
+                                                        <td>Rp. {{ App\Helpers\Money::setRupiah($price) }}</td>
+                                                        <td>{{ $orderDetail->qty }}</td>
+                                                        <td>Rp. {{ App\Helpers\Money::setRupiah($total) }}</td>
+                                                    </tr>
 
                                                     @endforeach
                                                 </tbody>
@@ -197,51 +186,26 @@
                             </div>
                         </div>
 
-                            <?php
-                                $grandTotal  = $totalOriginalPrice - $totalDiscountAmount;
-                                $totalPaid   = $subTotal;
-                                $totalRefund = $totalPaid - $grandTotal;
-
-                            ?>
-
                         <div class="row">
-                            <div class="col-md-6"> </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4"> </div>
+                            <div class="col-md-8">
                                 <div class="well">
                                     <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Sub Total: </div>
-                                        <div class="col-md-3 value"> 
-                                            Rp. {{ App\Helpers\Money::setRupiah($totalOriginalPrice) }} 
+                                        <div class="col-md-5 name"> Total Purchases: </div>
+                                        <div class="col-md-5 value"> 
+                                            Rp. {{ App\Helpers\Money::setRupiah($totalPurchases) }}
                                         </div>
                                     </div>
                                     <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Total Discount Amount: </div>
-                                        <div class="col-md-3 value"> 
-                                            Rp. {{ App\Helpers\Money::setRupiah($totalDiscountAmount) }} 
+                                        <div class="col-md-5 name"> Shipping Cost: </div>
+                                        <div class="col-md-5 value"> 
+                                            Rp.  {{ App\Helpers\Money::setRupiah($order->shipping_cost) }}
                                         </div>
                                     </div>
                                     <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Grand Total: </div>
-                                        <div class="col-md-3 value"> 
-                                            Rp. {{ App\Helpers\Money::setRupiah($grandTotal) }}  
-                                        </div>
-                                    </div>
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Total Paid: </div>
-                                        <div class="col-md-3 value">
-                                            Rp. {{ App\Helpers\Money::setRupiah($totalPaid) }} 
-                                        </div>
-                                    </div>
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Total Refunded: </div>
-                                        <div class="col-md-3 value"> 
-                                            Rp. {{ App\Helpers\Money::setRupiah($totalRefund) }} 
-                                        </div>
-                                    </div>
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"> Total Due: </div>
-                                        <div class="col-md-3 value"> 
-                                            Rp. {{ App\Helpers\Money::setRupiah($grandTotal) }} 
+                                        <div class="col-md-5 name"> Total: </div>
+                                        <div class="col-md-5 value"> 
+                                            Rp. {{ App\Helpers\Money::setRupiah($order->total) }}
                                         </div>
                                     </div>
                                 </div>

@@ -276,7 +276,7 @@
 
                         <div class="form-body">
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Description</label>
+                                <label class="col-md-2 control-label">Description <span class="required"> * </span></label>
                                 <div class="col-md-10">
                                     <textarea name="description" class="form-control" placeholder="description" rows="8">{{ $product->description }}</textarea>
                                     @if($errors->has('description'))
@@ -358,9 +358,11 @@
 
                         <div class="form-actions">
                             <div class="row">
-                                <div class="col-md-offset-2 col-md-9">
-                                    <button type="submit" class="btn green">Update</button>
-                                    <!-- <button type="button" class="btn default">Cancel</button> -->
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn green">Update</button>
+                                        <a href="{{ url('/dashboard/products') }}" class="btn btn-default">Cancel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

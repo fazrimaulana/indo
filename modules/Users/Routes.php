@@ -21,32 +21,32 @@ Route::group(['middleware'=>['web', 'auth'],'prefix' => 'dashboard'], function()
 			]);
 
 		Route::get('/{user}/edit', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.edit',
 				'uses' => 'Modules\Users\Controllers\UserController@getData'
 			]);
 
 		Route::post('/{user}/edit', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.edit',
 				'uses' => 'Modules\Users\Controllers\UserController@update'
 			]);
 
 		Route::get('/{user}/change-password', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.change-password',
 				'uses' => 'Modules\Users\Controllers\UserController@getChangePassword'
 			]);
 
 		Route::post('/{user}/change-password', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.change-password',
 				'uses' => 'Modules\Users\Controllers\UserController@changePassword'
 			]);
 
 		Route::delete('/delete', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.delete',
 				'uses' => 'Modules\Users\Controllers\UserController@delete'
 			]);
 
 		Route::post('/delete-users', [
-				'as' => 'Users',
+				'as' => 'dashboard.users.delete',
 				'uses' => 'Modules\Users\Controllers\UserController@deleteUsers'
 			]);
 

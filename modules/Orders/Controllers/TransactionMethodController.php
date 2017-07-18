@@ -54,25 +54,6 @@ class TransactionMethodController extends Controller
         }
 	}
 
-	public function getData(TransactionMethod $transactionMethod, Request $request)
-	{
-		$method_permission = "can_edit_transaction_method";
-		if(Auth::user()->hasRole('root') || Auth::user()->can($method_permission) ){
-
-			if ($request->ajax()) {
-				
-				return response()->json($transactionMethod);
-
-			}
-			else{
-				return view('404');
-			}
-
-        }else{
-            return view('404');
-        }
-	}
-
 	public function update(Request $request)
 	{
 		$method_permission = "can_edit_transaction_method";

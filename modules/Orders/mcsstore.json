@@ -31,7 +31,7 @@
             "title":"Orders Management",
             "icon":"fa fa-shopping-cart",
             "permission":"can_see_orders_menu",
-            "sequence":"95"
+            "sequence":"94"
         },
         "orders_index": {
             "menu_id":"dashboard.orders.index",

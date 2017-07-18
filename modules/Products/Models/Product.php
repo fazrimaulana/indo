@@ -19,6 +19,11 @@ class Product extends Model
         return $this->belongsToMany('Modules\Products\Models\Gallery', 'product_gallery', 'product_id', 'gallery_id')->withPivot('set_utama');
     }
 
+    public function getGalleryUtama()
+    {
+        return $this->belongsToMany('Modules\Products\Models\Gallery', 'product_gallery', 'product_id', 'gallery_id')->wherePivot('set_utama', '1');
+    }
+
     public function category()
     {
     	return $this->belongsTo('Modules\Categories\Models\Category', 'category_id', 'id');

@@ -9,6 +9,7 @@ use Modules\Orders\Models\Order;
 use Modules\Orders\Models\TransactionMethod;
 use Modules\Orders\Models\OrderDetail;
 use Auth;
+use App\Helpers\RajaOngkir;
 
 class OrderController extends Controller
 {
@@ -55,15 +56,66 @@ class OrderController extends Controller
 		$method_permission = "can_edit_orders";
 		if(Auth::user()->hasRole('root') || Auth::user()->can($method_permission) ){
 			
+			$rajaOngkir = new RajaOngkir;
+
+			$provinces = $rajaOngkir->provinsi();
+			$cities = $rajaOngkir->getCity($order->buyer_province);
+
+			// 153 -> Jakarta Selatan
+			$costs = $rajaOngkir->getCost(153, $order->buyer_city, $order->weight, $order->courier);
+			$transactionMethods = TransactionMethod::all();
+
 			return view('Orders::order.edit', [
 
-					"order" => $order
+					"order" => $order,
+					"provinces" => $provinces,
+					"cities" => $cities,
+					"costs" => $costs->rajaongkir->results[0]->costs,
+					"transactionMethods" => $transactionMethods
 
 				]);
 
         }else{
             return view('404');
         }
+	}
+
+	public function update(Request $request, Order $order)
+	{
+		//return dd($request->all());
+
+		$this->validate($request, [
+				"name" => "required",
+				"email" => "required",
+				"no_hp" => "required",
+				"address" => "required",
+				"province" => "required",
+				"city" => "required",
+				"courier" => "required",
+				"service" => "required",
+				"payment_method" => "required",
+				"shipping_cost" => "required"
+			]);
+
+		$rajaOngkir = new RajaOngkir;
+		$service = $rajaOngkir->getCost(153, $request->city, $order->weight, $request->courier);
+
+		$order->transaction_method_id = $request->payment_method;
+		$order->buyer_name = $request->name;
+		$order->buyer_email = $request->email;
+		$order->buyer_phone_number = $request->no_hp;
+		$order->buyer_address = $request->address;
+		$order->buyer_province = $request->province;
+		$order->buyer_city = $request->city;
+		$order->courier = $request->courier;
+		$order->service = json_encode( $service->rajaongkir->results[0]->costs[$request->service] );;
+		$order->shipping_cost = $request->shipping_cost;
+
+		$order->save();
+
+		return redirect()->back();
+
+
 	}
 
 	public function search(Request $request)

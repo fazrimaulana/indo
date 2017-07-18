@@ -36,6 +36,7 @@
                         border-top: 1px solid $grey;
                         display: inline-block;
                         width: 100%;
+                        position: relative;
                     }
                     li:hover {
                         .dropdown-custom-2 {
@@ -46,12 +47,12 @@
                         li {
                             a {
                                 display: block;
-                                padding: 12px 20px;
+                                padding: 10px 20px;
                             }
                             a:hover {
                                 background-color: #eaeaea;
                             }
-                           height: 47px;
+                           height: 43px;
                         }
                         padding: 0px;
                         
@@ -59,8 +60,8 @@
                         display: none;
                         position: absolute;
                         background-color: $putih;
-                        left: 158px;
-                        top: -3px;
+                        left: 100%;
+                        top: 0;
                         width: 100%;
                         border-left: 3px solid $orange;
                     }

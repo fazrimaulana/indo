@@ -33,7 +33,7 @@
             "title":"Role And Permission Management",
             "icon":"fa fa-lock",
             "permission":"can_see_module_menu",
-            "sequence":"98"
+            "sequence":"97"
         },
         "role_index": {
             "menu_id":"dashboard.setting.role.index",

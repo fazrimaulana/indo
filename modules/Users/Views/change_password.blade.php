@@ -81,7 +81,10 @@
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-7">
-                                    <button type="submit" class="btn green">Change</button>
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn green">Save Change</button>
+                                        <a href="{{ url('/dashboard/users') }}" class="btn btn-default">Cancel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

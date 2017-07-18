@@ -57,7 +57,7 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <a href="{{ url('/dashboard/orders/add') }}" class="btn btn-primary btn-sm">Add New Order</a>
+                                <!-- <a href="{{ url('/dashboard/orders/add') }}" class="btn btn-primary btn-sm">Add New Order</a> -->
 
                                 <button class="btn btn-sm btn-danger" id="delete_check" data-loading-text="Loading...">Delete</button>
                             </div>
@@ -106,12 +106,13 @@
                                         <td>
                                            <form id="action">
                                                 <input type="checkbox" name="check_action" value="{{ $order->id }}" class="check">
+                                            </form>
                                         </td>
                                         <td> {{ $order->buyer_name }} </td>
                                         <td> {{ $order->buyer_email }} </td>
                                         <td> {{ $order->buyer_phone_number }} </td>
                                         <td> {{ $order->order_status }} </td>
-                                        <td> {{ $order->total }} </td>
+                                        <td> Rp. {{ App\Helpers\Money::setRupiah($order->total) }} </td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="{{ url('/dashboard/orders/'.$order->id.'/edit') }}" class="btn btn-info btn-sm btn-4 edit">Edit</a>
@@ -121,7 +122,6 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                    </form>
                                 </tbody>
                             </table>
                         </div>
@@ -267,7 +267,7 @@
             var id = $form.serializeArray();
             var url = "{{ url('/dashboard/orders/delete_check') }}";
             var orders = "{{ url('/dashboard/orders') }}";
-            var arrayId = []; 
+            var arrayId = [];
 
             if (id!="") {
 

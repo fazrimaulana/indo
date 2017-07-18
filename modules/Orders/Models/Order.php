@@ -11,7 +11,7 @@ class Order extends Model
 	protected $primarykey = "id";
 
 	protected $fillable = [
-		"transaction_method_id", "buyer_name", "buyer_email", "buyer_phone_number", "buyer_address", "order_status", "total"
+		"code", "transaction_method_id", "buyer_name", "buyer_email", "buyer_phone_number", "buyer_address", "buyer_province", "buyer_city", "weight", "courier", "service", "shipping_cost", "order_status", "total"
 	];
 
 	public function transactionMethod()
