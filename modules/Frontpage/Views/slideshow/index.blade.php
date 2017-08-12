@@ -1,11 +1,6 @@
 @extends('layouts.backend.app')
 
 @section('css')
-    
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="{{ url('/backend/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ url('/backend/assets/pages/css/profile.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS -->
 
     <link rel="stylesheet" type="text/css" href="{{ url('/backend/assets/iCheck/skins/square/blue.css') }}">
 
@@ -120,7 +115,7 @@
                                                         <div class="btn-group">
                                                             <a class="btn btn-info btn-sm btn-4 edit" data-id="{{ $slide->id }}" data-title="{{ $slide->title }}">Edit</a>
                                                             <a class="btn btn-danger btn-sm btn-6 delete" data-id="{{ $slide->id }}" >Delete</a>
-                                                            <a href="{{ url('/dashboard/frontpage/slideshow/'.$slide->id.'/detail') }}" class="btn btn-sm btn-success button-4">Detail</a>
+                                                            <a class="btn btn-sm btn-success button-4 detail" data-id="{{ $slide->id }}" data-image="{{ url($slide->gallery->path) }}" data-title="{{ $slide->title }}" data-name="{{ $slide->gallery->name }}" data-path="{{ url($slide->gallery->path) }}" data-created="{{ $slide->gallery->created_at }}">Detail</a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -145,7 +140,7 @@
 </div>
 <!-- END CONTENT BODY -->
 
-<!-- Modal Edit Category -->
+<!-- Modal Edit Slideshow -->
 <div class="modal fade" tabindex="-1" role="dialog" id="modalEditSlideshow">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -153,52 +148,94 @@
                 <h4 class="modal-title">Edit Slideshow</h4>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/dashboard/frontpage/slidwshow/edit') }}" method="post" accept-charset="utf-8" id="formEditSlideshow" enctype="multipart/form-data">
-                    
+                <form action="{{ url('/dashboard/frontpage/slideshow/edit') }}" method="post" accept-charset="utf-8" id="formEditSlideshow" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <input type="hidden" name="id" class="form-control" id="id">
                     <div class="form-group">
                         <label class="control-label">Title</label>
                         <input type="text" class="form-control" name="title" placeholder="Title..." id="title" />
                     </div>
                     <div class="form-group">
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> 
-                            </div>
-                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                            <div>
-                                <span class="btn default btn-file"></span>
-                                <span class="fileinput-new"> Select image </span>
-                                <span class="fileinput-exists"> Change </span>
-                                <input type="file" name="image" accept="image/*">
-                                <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                            </div>
-                        </div>
-                        <div class="clearfix margin-top-10">
-                                                                        
-                        </div>
+                        <label class="control-label">Image</label>
+                        <input type="file" class="form-control" name="image" placeholder="Image..." id="image" accept="image/*" />
                     </div>
                 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" id="closeEdit">Close</button>
                 <button type="submit" class="btn green">Save Change</button>
                 </form>
             </div>  
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-        <!-- End Modal Edit Category -->
+<!-- End Modal Edit Slideshow -->
+
+<div class="modal fade bs-example-modal-sm" id="modalDeleteSlideshow" tabindex="-1" role="dialog" aria-labelledby="deleteSlideshowModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Slideshow</h4>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url('/dashboard/frontpage/slideshow/delete') }}" id="formDeleteSlideshow" method="post">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <input type="hidden" name="id" class="form-control" id="id">
+                    <p><b>Yakin ingin menghapus data ini ???</b></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit Slideshow -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalDetailSlideshow">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detail Slideshow</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="" alt="" id="detail_image" class="img-responsive">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Title</label>
+                            <input type="text" class="form-control" id="detail_title" name="title" placeholder="Title..." disabled />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            <input type="text" class="form-control" id="detail_name" name="name" placeholder="Name..." disabled />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">URL</label>
+                            <textarea class="form-control" id="detail_path" name="path" placeholder="URL..." disabled rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Created At</label>
+                            <input type="text" class="form-control" id="detail_created" name="created" placeholder="Created..." disabled />
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>  
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal Edit Slideshow -->
 
 @endsection
 
 @section('javascript')
-
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="{{ url('/backend/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') }}" type="text/javascript"></script>
-    <script src="{{ url('/backend/assets/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>
-    <script src="{{ url('/backend/assets/pages/scripts/profile.min.js') }}" type="text/javascript"></script>
-    <!-- END PAGE LEVEL PLUGINS -->
 
     <script src="{{ url('/backend/assets/iCheck/icheck.js') }}" type="text/javascript"></script>
 
@@ -257,14 +294,59 @@
             var title = $(this).data("title");
             var $form = $('#formEditSlideshow');
 
-            // $form.find('#id').val(id);
-            // $form.find('#title').val(title);
-
-            console.log(id);
+            $form.find('#id').val(id);
+            $form.find('#title').val(title);
 
             $('#modalEditSlideshow').modal({
                 "show": true,
                 "backdrop": "static"
+            });
+
+        });
+
+        $('#closeEdit').on('click', function(){
+
+            var $form = $('#formEditSlideshow');
+
+            $form.find('#image').val("");
+            $('#modalEditSlideshow').modal("hide");
+
+        });
+
+        $('.delete').on('click', function(){
+
+            var id = $(this).data("id");
+            var $form = $('#formDeleteSlideshow');
+
+            $form.find('#id').val(id);
+
+            $('#modalDeleteSlideshow').modal({
+                "show": true,
+                "backdrop": "static"
+            });
+
+        });
+
+        $('.detail').on('click', function(){
+
+            var id = $(this).data("id");
+            var image = $(this).data("image");
+            var title = $(this).data("title");
+            var name = $(this).data("name");
+            var path = $(this).data("path");
+            var created = $(this).data("created");
+
+            $('img#detail_image').attr('src', image);
+            $('input#detail_title').val(title);
+            $('input#detail_name').val(name);
+            $('textarea#detail_path').val(path);
+            $('input#detail_created').val(created);
+
+            $('#modalDetailSlideshow').modal({
+
+                "show": true,
+                "backdrop": "static"
+
             });
 
         });
